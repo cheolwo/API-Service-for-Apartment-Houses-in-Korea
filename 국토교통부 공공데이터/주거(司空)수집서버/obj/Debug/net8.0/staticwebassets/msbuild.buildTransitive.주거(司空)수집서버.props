@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\주거(司空)수집서버.props" />
+</Project>
