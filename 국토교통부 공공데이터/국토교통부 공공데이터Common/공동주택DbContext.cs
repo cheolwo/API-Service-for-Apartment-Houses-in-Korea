@@ -1,7 +1,9 @@
 ﻿using Common.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Newtonsoft.Json;
 using 국토교통부_공공데이터Common.Model;
+using 국토교통부_공공데이터Common.Model.ComplexExpense;
 
 namespace 국토교통부_공공데이터Common
 {
@@ -54,6 +56,26 @@ namespace 국토교통부_공공데이터Common
         public override void Configure(EntityTypeBuilder<공용관리비> builder)
         {
             base.Configure(builder);
+
+            builder.Property(e => e.인건비)
+                .HasConversion(
+                    v => JsonConvert.SerializeObject(v, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }),
+                    v => JsonConvert.DeserializeObject<인건비>(v, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+
+            builder.Property(e => e.제사무비)
+                .HasConversion(
+                    v => JsonConvert.SerializeObject(v, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }),
+                    v => JsonConvert.DeserializeObject<제사무비>(v, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+
+            builder.Property(e => e.제세공과금)
+                .HasConversion(
+                    v => JsonConvert.SerializeObject(v, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }),
+                    v => JsonConvert.DeserializeObject<제세공과금>(v, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
+
+            builder.Property(e => e.차량유지비)
+                .HasConversion(
+                    v => JsonConvert.SerializeObject(v, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }),
+                    v => JsonConvert.DeserializeObject<차량유지비>(v, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
         }
     }
 }

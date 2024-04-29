@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7yTbkFPI1Um61+bFEY9VhwWzUFkYQgeAmUSVLF3dPSaINa362oSwqPOQrru4YjpXNRMbCcNQRRlv1WRypnwZKA==",
+  "dgSpecHash": "wEUGKLU2O4jol9IdDjcDd4VAChHfeR0FgyrSxaq0khksqGxyKonRVsyy9HuF72gAYVcariTGsP721x30FYkl9w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\국토교통부 공공데이터\\주거(司空)수집서버\\주거(司空)수집서버.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\CommonHouse\\국토교통부 공공데이터\\주거(司空)수집서버\\주거(司空)수집서버.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.36.0\\azure.core.1.36.0.nupkg.sha512",

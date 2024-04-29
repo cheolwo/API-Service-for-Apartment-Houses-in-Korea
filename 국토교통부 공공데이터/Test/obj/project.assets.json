@@ -2962,8 +2962,8 @@
     },
     "Common/1.0.0": {
       "type": "project",
-      "path": "../../CommonManagement/Common/Common.csproj",
-      "msbuildProject": "../../CommonManagement/Common/Common.csproj"
+      "path": "../../../CommonManagement/Common/Common.csproj",
+      "msbuildProject": "../../../CommonManagement/Common/Common.csproj"
     },
     "국토교통부 공공데이터Common/1.0.0": {
       "type": "project",
@@ -2983,11 +2983,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\국토교통부 공공데이터\\Test\\Test.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\CommonHouse\\국토교통부 공공데이터\\Test\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "C:\\Users\\user\\Desktop\\국토교통부 공공데이터\\Test\\Test.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\CommonHouse\\국토교통부 공공데이터\\Test\\Test.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\국토교통부 공공데이터\\Test\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\CommonHouse\\국토교통부 공공데이터\\Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3009,8 +3009,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\user\\Desktop\\국토교통부 공공데이터\\국토교통부 공공데이터Common\\국토교통부 공공데이터Common.csproj": {
-              "projectPath": "C:\\Users\\user\\Desktop\\국토교통부 공공데이터\\국토교통부 공공데이터Common\\국토교통부 공공데이터Common.csproj"
+            "C:\\Users\\user\\Desktop\\CommonHouse\\국토교통부 공공데이터\\국토교통부 공공데이터Common\\국토교통부 공공데이터Common.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\CommonHouse\\국토교통부 공공데이터\\국토교통부 공공데이터Common\\국토교통부 공공데이터Common.csproj"
             }
           }
         }

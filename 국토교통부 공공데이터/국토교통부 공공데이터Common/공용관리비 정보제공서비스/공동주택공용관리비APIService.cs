@@ -18,6 +18,7 @@ using 국토교통부_공공데이터Common.공용관리비_정보제공서비�
 using 국토교통부_공공데이터Common.공용관리비_정보제공서비스.ResponseModel.차량유지비;
 using 국토교통부_공공데이터Common.공용관리비_정보제공서비스.ResponseModel.청소비;
 using 국토교통부_공공데이터Common.공용관리비_정보제공서비스.ResponseModel.피복비;
+using 국토교통부_공공데이터Common.공용관리비_정보제공서비스.인건비;
 
 namespace 국토교통부_공공데이터Common.공용관리비정보제공서비스
 {
@@ -288,6 +289,34 @@ namespace 국토교통부_공공데이터Common.공용관리비정보제공서�
             using (StringReader reader = new StringReader(results))
             {
                 return (위탁관리수수료Response)serializer.Deserialize(reader);
+            }
+        }
+        public async Task<인건비Response> Get인건비(공용관리비Request request)
+        {
+            string baseUrl = "http://apis.data.go.kr/1611000/AptCmnuseManageCostService/getHsmpDisasterPreventionCostInfo";
+            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
+            queryParameters["ServiceKey"] = _serviceKey;
+            queryParameters["kaptCode"] = request.kaptCode;
+            queryParameters["searchDate"] = request.searchDate;
+
+            string url = $"{baseUrl}?{queryParameters}";
+
+            HttpResponseMessage response = await _httpClient.GetAsync(url);
+            if (!response.IsSuccessStatusCode)
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                throw new HttpRequestException($"Request failed with status code {response.StatusCode} and content {errorContent}");
+            }
+
+            string results = await response.Content.ReadAsStringAsync();
+            Console.WriteLine("Raw XML Response:");
+            Console.WriteLine(results);
+
+            // XML 응답을 인건비Response 객체로 역직렬화합니다.
+            XmlSerializer serializer = new XmlSerializer(typeof(인건비Response));
+            using (StringReader reader = new StringReader(results))
+            {
+                return (인건비Response)serializer.Deserialize(reader);
             }
         }
         public async Task<재해예방비Response> Get재해예방비(공용관리비Request request)
