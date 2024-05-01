@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace 국토교통부_공공데이터Common.Handlr
 {
-    public class 공용관리비Handlr
+    public class 장기수선충당금정보수집Handlr
     {
     }
 }
