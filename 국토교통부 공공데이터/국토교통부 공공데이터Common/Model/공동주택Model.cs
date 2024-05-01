@@ -1,11 +1,13 @@
-﻿using Common.Model;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Xml.Serialization;
 using 국토교통부_공공데이터Common.Model.ComplexExpense;
 
 namespace 국토교통부_공공데이터Common.Model
 {
-    public class 공동주택 : Center
+    public class 공동주택
     {
+        [Key]
         [XmlElement("kaptCode")]
         public string 단지코드 { get; set; }
         [XmlElement("kaptName")]
@@ -20,12 +22,13 @@ namespace 국토교통부_공공데이터Common.Model
         public string 리 { get; set; }
         [XmlElement("bjdCode")]
         public string 법정동코드 { get; set; }
+        public string Address { get; set; }
         public List<개별사용료> 개별사용료목록 { get; set; }
         public List<에너지사용정보> 에너지사용목록 { get; set; }
         public List<공용관리비> 공용관리비목록 { get; set; }
         public List<장기수선충당금> 장기수선충당금목록 { get; set; }
     }
-    public class 개별사용료 : Entity
+    public class 개별사용료 
     {
         public string? date { get; set; }
         [XmlElement("gasC")]
@@ -63,10 +66,11 @@ namespace 국토교통부_공공데이터Common.Model
         public long 전기전용금액 { get; set; } // 전기 전용 금액, 크기: 22, 필수
         [XmlElement("purifi")]
         public long 정화조오물수수료 { get; set; } // 정화조오물수수료, 크기: 22, 필수
-        public Guid 공동주택Id { get; set; }
+        [ForeignKey("공동주택")]
+        public string 단지코드 { get; set; }
         public 공동주택 공동주택 { get; set; }
     }
-    public class 공용관리비 : Entity
+    public class 공용관리비
     {
         public string? date { get; set; }
         [XmlElement("guardCost")]
@@ -99,10 +103,11 @@ namespace 국토교통부_공공데이터Common.Model
         public 제세공과금 제세공과금 { get; set; }
         public 차량유지비 차량유지비 { get; set; }
         public 기타부대비용 기타부대비용 { get; set; }
-        public Guid 공동주택Id { get; set; }
+        [ForeignKey("공동주택")]
+        public string 단지코드 { get; set; }
         public 공동주택 공동주택 { get; set; }
     }
-    public class 에너지사용정보 : Entity
+    public class 에너지사용정보 
     {
         public string date { get; set; }
         [XmlElement("heat")]
@@ -134,10 +139,11 @@ namespace 국토교통부_공공데이터Common.Model
 
         [XmlElement("hwaterCool")]
         public long 수도사용량 { get; set; } // 수도사용량(㎥), 크기: 22, 필수
-        public Guid 공동주택Id { get; set; }
+        [ForeignKey("공동주택")]
+        public string 단지코드 { get; set; }
         public 공동주택 공동주택 { get; set; }
     }
-    public class 장기수선충당금 : Entity
+    public class 장기수선충당금
     {
         public string date { get; set; }
         [XmlElement("SLevy")]
@@ -148,7 +154,8 @@ namespace 국토교통부_공공데이터Common.Model
         public long 적립요율 { get; set; } // 적립요율(%), 크기: 22, 필수
         [XmlElement("STot")]
         public long 충당금잔액 { get; set; } // 충당금잔액, 크기: 22, 필수
-        public Guid 공동주택Id { get; set; }
+        [ForeignKey("공동주택")]
+        public string 단지코드 { get; set; }
         public 공동주택 공동주택 { get; set; }
     }
 }

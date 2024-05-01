@@ -18,8 +18,4 @@
     <ProjectReference Include="..\..\..\CommonManagement\Common\Common.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="BatchService\" />
-  </ItemGroup>
-
 </Project>

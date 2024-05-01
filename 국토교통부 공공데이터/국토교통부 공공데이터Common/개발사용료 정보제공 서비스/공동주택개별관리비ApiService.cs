@@ -19,11 +19,11 @@ namespace 국토교통부_공공데이터Common.개발사용료정보제공서�
     /// <summary>
     /// http://apis.data.go.kr/1611000/AptCmnuseManageCostService
     /// </summary>
-    public class 공동주택개별관리비ApiService
+    public class 공동주택개별관리비APIService
     {
         private readonly HttpClient _httpClient;
         private string _serviceKey;
-        public 공동주택개별관리비ApiService(HttpClient httpClient, IConfiguration configuration)
+        public 공동주택개별관리비APIService(HttpClient httpClient, IConfiguration configuration)
         {
             _httpClient = httpClient;
             _serviceKey = configuration["공공데이터ServiceKey"] ??

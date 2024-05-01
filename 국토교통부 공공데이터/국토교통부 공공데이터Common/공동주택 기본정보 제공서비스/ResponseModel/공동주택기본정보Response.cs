@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace 국토교통부_공공데이터Common.공동주택_기본정보_제공서비스.ResponseModel
+namespace 국토교통부_공공데이터Common.공동주택_기본정보_제공서비스.기본정보.ResponseModel
 {
     [XmlRoot("response")]
     public class 공동주택기본정보Response

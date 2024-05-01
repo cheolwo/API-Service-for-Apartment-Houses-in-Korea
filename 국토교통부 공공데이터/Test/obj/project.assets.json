@@ -2979,23 +2979,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\power\\.nuget\\packages\\": {},
+    "C:\\Users\\user\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\power\\OneDrive\\Desktop\\CommonHouse\\국토교통부 공공데이터\\Test\\Test.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\CommonHouse\\국토교통부 공공데이터\\Test\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "C:\\Users\\power\\OneDrive\\Desktop\\CommonHouse\\국토교통부 공공데이터\\Test\\Test.csproj",
-      "packagesPath": "C:\\Users\\power\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\power\\OneDrive\\Desktop\\CommonHouse\\국토교통부 공공데이터\\Test\\obj\\",
+      "projectPath": "C:\\Users\\user\\Desktop\\CommonHouse\\국토교통부 공공데이터\\Test\\Test.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\CommonHouse\\국토교통부 공공데이터\\Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\power\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3011,8 +3011,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\power\\OneDrive\\Desktop\\CommonHouse\\국토교통부 공공데이터\\국토교통부 공공데이터Common\\국토교통부 공공데이터Common.csproj": {
-              "projectPath": "C:\\Users\\power\\OneDrive\\Desktop\\CommonHouse\\국토교통부 공공데이터\\국토교통부 공공데이터Common\\국토교통부 공공데이터Common.csproj"
+            "C:\\Users\\user\\Desktop\\CommonHouse\\국토교통부 공공데이터\\국토교통부 공공데이터Common\\국토교통부 공공데이터Common.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\CommonHouse\\국토교통부 공공데이터\\국토교통부 공공데이터Common\\국토교통부 공공데이터Common.csproj"
             }
           }
         }

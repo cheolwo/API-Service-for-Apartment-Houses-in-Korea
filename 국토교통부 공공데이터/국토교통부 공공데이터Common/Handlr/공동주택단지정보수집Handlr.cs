@@ -6,6 +6,23 @@ using 국토교통부_공공데이터Common.공동주택_기본정보_제공서�
 using 국토교통부_공공데이터Common;
 using 국토교통부_공공데이터Common.Model;
 
+/// <summary>
+/// 공동주택DbContext에서
+/// Address가 Null인
+/// 단지목록 조회단계
+
+/// 단지목록을 순회하며
+/// kaptCode를 통해
+/// 단지정보수집APIService에
+/// Http 요청단계
+
+/// 공동주택상세정보Response된 Item을
+/// 공동주택 Model에 Mapping 단계
+
+/// 공동주택DbContext를 통해
+/// Model을 Update하는 단계를 포함하는 공동주택단지
+/// 정보수집 프로세스
+/// </summary>
 public class 공동주택단지정보수집Handlr : IRequestHandler<공동주택상세정보Request, Unit>
 {
     private readonly 공동주택DbContext _context;
