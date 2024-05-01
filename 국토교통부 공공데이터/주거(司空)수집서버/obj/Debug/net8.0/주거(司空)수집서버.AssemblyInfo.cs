@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("주거(司空)수집서버")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4ae71bea8e37c45991cc053f58003440c6aa546")]
 [assembly: System.Reflection.AssemblyProductAttribute("주거(司空)수집서버")]
 [assembly: System.Reflection.AssemblyTitleAttribute("주거(司空)수집서버")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
