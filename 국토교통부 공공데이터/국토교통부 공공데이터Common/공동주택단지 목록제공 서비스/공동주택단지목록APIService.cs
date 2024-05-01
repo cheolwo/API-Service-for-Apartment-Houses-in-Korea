@@ -9,12 +9,12 @@ namespace 국토교통부_공공데이터Common.국토교통부_공동주택단�
         Task<아파트Response> GetTotalAptListAsync();
     }
 
-    public class 공동주택단지APIService : I공동주택단지APIService
+    public class 공동주택단지목록APIService : I공동주택단지APIService
     {
         private readonly HttpClient _httpClient;
         private readonly string _serviceKey;
 
-        public 공동주택단지APIService(HttpClient httpClient, IConfiguration configuration)
+        public 공동주택단지목록APIService(HttpClient httpClient, IConfiguration configuration)
         {
             _httpClient = httpClient;
             _serviceKey = configuration["AptListApi:ServiceKey"] ??

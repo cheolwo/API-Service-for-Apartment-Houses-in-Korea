@@ -9,9 +9,9 @@ namespace 국토교통부_공공데이터Common.Handlr
     public class 공동주택단지목록정보수집Handlr : IRequestHandler<공동주택단지Request, Unit>
     {
         private readonly 공동주택DbContext _context;
-        private readonly 공동주택단지APIService _APIService;
+        private readonly 공동주택단지목록APIService _APIService;
         private readonly IMapper _mapper;
-        public 공동주택단지목록정보수집Handlr(IMapper mapper, 공동주택DbContext context, 공동주택단지APIService aPIService)
+        public 공동주택단지목록정보수집Handlr(IMapper mapper, 공동주택DbContext context, 공동주택단지목록APIService aPIService)
         {
             _mapper = mapper;
             _context = context;

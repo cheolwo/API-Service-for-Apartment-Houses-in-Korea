@@ -1,22 +1,54 @@
-﻿using MediatR;
-using 국토교통부_공공데이터Common.공동주택_기본정보_제공서비스;
+﻿using AutoMapper;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
 using 국토교통부_공공데이터Common.공동주택_기본정보_제공서비스.RequestModel;
+using 국토교통부_공공데이터Common.공동주택_기본정보_제공서비스;
+using 국토교통부_공공데이터Common;
+using 국토교통부_공공데이터Common.Model;
 
-namespace 국토교통부_공공데이터Common.Handlr
+public class 공동주택단지정보수집Handlr : IRequestHandler<공동주택상세정보Request, Unit>
 {
-    public class 공동주택단지정보수집Handlr : IRequestHandler<공동주택상세정보Request>
+    private readonly 공동주택DbContext _context;
+    private readonly 공동주택단지정보APIService _APIService;
+    private readonly IMapper _mapper;
+
+    public 공동주택단지정보수집Handlr(공동주택DbContext context, 공동주택단지정보APIService aPIService, IMapper mapper)
     {
-        private readonly 공동주택DbContext _context;
-        private readonly 공동주택단지정보APIService _APIService;
-        public 공동주택단지정보수집Handlr(공동주택DbContext context, 공동주택단지정보APIService aPIService)
+        _context = context;
+        _APIService = aPIService;
+        _mapper = mapper;
+    }
+
+    public async Task<Unit> Handle(공동주택상세정보Request request, CancellationToken cancellationToken)
+    {
+        // 공동주택DbContext를 통해 Address가 Null인 공동주택을 Load합니다.
+        var 공동주택목록 = await _context.Set<공동주택>()
+            .Where(x => string.IsNullOrEmpty(x.Address))
+            .ToListAsync(cancellationToken);
+
+        // 공동주택목록을 순회하며 각 공동주택에 대한 상세정보를 요청합니다.
+        foreach (var 공동주택 in 공동주택목록)
         {
-            _context = context;
-            _APIService = aPIService;
+            try
+            {
+                var response = await _APIService.Get공동주택상세정보(new 공동주택상세정보Request { kaptCode = 공동주택.단지코드 });
+
+                // 요청된 Response를 Model에 Mapping합니다.
+                _mapper.Map(response, 공동주택);
+
+                // Mapping된 Model을 Update합니다.
+                _context.Set<공동주택>().Update(공동주택);
+            }
+            catch (Exception ex)
+            {
+                // 로그 또는 오류 처리
+                Console.WriteLine($"Error processing {공동주택.단지코드}: {ex.Message}");
+            }
         }
 
-        public Task Handle(공동주택상세정보Request request, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
+        // 변경 사항을 데이터베이스에 저장합니다.
+        await _context.SaveChangesAsync(cancellationToken);
+
+        return Unit.Value; // 작업 완료 신호
     }
 }
