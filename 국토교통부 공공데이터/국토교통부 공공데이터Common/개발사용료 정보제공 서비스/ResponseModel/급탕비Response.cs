@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace 국토교통부_공공데이터Common.개발사용료_정보제공_서비스.ResponseModel
+namespace 국토교통부_공공데이터Common.개발사용료_정보제공_서비스.ResponseModel.급탕비
 {
     [XmlRoot("response")]
     public class 급탕비Response

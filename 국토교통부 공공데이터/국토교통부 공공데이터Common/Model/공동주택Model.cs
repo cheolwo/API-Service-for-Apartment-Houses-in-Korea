@@ -6,12 +6,19 @@ namespace 국토교통부_공공데이터Common.Model
 {
     public class 공동주택 : Center
     {
+        [XmlElement("kaptCode")]
         public string 단지코드 { get; set; }
+        [XmlElement("kaptName")]
         public string 단지명 { get; set; }
+        [XmlElement("as1")]
         public string 시도 { get; set; }
+        [XmlElement("as2")]
         public string 시군구 { get; set; }
+        [XmlElement("as3")]
         public string 읍면동 { get; set; }
+        [XmlElement("as4")]
         public string 리 { get; set; }
+        [XmlElement("bjdCode")]
         public string 법정동코드 { get; set; }
         public List<개별사용료> 개별사용료목록 { get; set; }
         public List<에너지사용정보> 에너지사용목록 { get; set; }
@@ -66,12 +73,6 @@ namespace 국토교통부_공공데이터Common.Model
         public long 경비비 { get; set; }
         [XmlElement("eduCost")]
         public long 교육훈련비 { get; set; }
-        [XmlElement("careItemCost")]
-        public long 관리용품구입비 { get; set; }
-        [XmlElement("accountingCost")]
-        public long 전문가자문비 { get; set; }
-        [XmlElement("hiddenCost")]
-        public long 잡비 { get; set; }
         [XmlElement("disinfCost")]
         public long 소독비 { get; set; }
         [XmlElement("lrefCost1")]
@@ -84,18 +85,20 @@ namespace 국토교통부_공공데이터Common.Model
         public long 안전점검비 { get; set; }
         [XmlElement("manageCost")]
         public long 위탁관리수수료 { get; set; }
-        public 인건비 인건비 { get; set; }
+
         [XmlElement("lrefCost4")]
         public long 재해예방비 { get; set; }
-        public 제사무비 제사무비 { get; set; }
-        public 제세공과금 제세공과금 { get; set; }
         [XmlElement("hnetwCost")]
         public long 지능형홈네트워크설비유지비 { get; set; }
-        public 차량유지비 차량유지비 { get; set; }
         [XmlElement("cleanCost")]
         public long 청소비 { get; set; }
         [XmlElement("clothesCost")]
         public long 피복비 { get; set; }
+        public 인건비 인건비 { get; set; }
+        public 제사무비 제사무비 { get; set; }
+        public 제세공과금 제세공과금 { get; set; }
+        public 차량유지비 차량유지비 { get; set; }
+        public 기타부대비용 기타부대비용 { get; set; }
         public Guid 공동주택Id { get; set; }
         public 공동주택 공동주택 { get; set; }
     }
