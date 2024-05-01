@@ -18,4 +18,8 @@
     <ProjectReference Include="..\..\..\CommonManagement\Common\Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="개발사용료 정보제공 서비스\MappingProfile\" />
+  </ItemGroup>
+
 </Project>

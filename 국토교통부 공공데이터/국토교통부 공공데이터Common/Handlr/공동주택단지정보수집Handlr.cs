@@ -51,7 +51,7 @@ public class 공동주택단지정보수집Handlr : IRequestHandler<공동주택
                 var response = await _APIService.Get공동주택상세정보(new 공동주택상세정보Request { kaptCode = 공동주택.단지코드 });
 
                 // 요청된 Response를 Model에 Mapping합니다.
-                _mapper.Map(response, 공동주택);
+                _mapper.Map(response.Body.Item, 공동주택);
 
                 // Mapping된 Model을 Update합니다.
                 _context.Set<공동주택>().Update(공동주택);

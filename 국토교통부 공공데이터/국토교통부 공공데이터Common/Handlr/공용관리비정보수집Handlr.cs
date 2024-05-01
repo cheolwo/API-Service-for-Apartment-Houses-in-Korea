@@ -52,23 +52,23 @@ namespace 국토교통부_공공데이터Common.Handlr
             var 피복비Response = await _APIService.Get피복비(request);
             var 소독비Response = await _APIService.Get소독비(request);
 
-            _Mapper.Map(난방비Response, 공용관리비);
-            _Mapper.Map(경비비Response, 공용관리비);
-            _Mapper.Map(기타부대비용Response, 공용관리비);
-            _Mapper.Map(수선비Response, 공용관리비);
-            _Mapper.Map(승강기유지비Response, 공용관리비);
-            _Mapper.Map(시설유지비Response, 공용관리비);
-            _Mapper.Map(안전점검비Response, 공용관리비);
-            _Mapper.Map(위탁관리수수료Response, 공용관리비);
-            _Mapper.Map(인건비Response, 공용관리비);
-            _Mapper.Map(재해예방비Response, 공용관리비);
-            _Mapper.Map(제사무비Response, 공용관리비);
-            _Mapper.Map(제세공과금Response, 공용관리비);
-            _Mapper.Map(지능형홈네트워크설비유지비Response, 공용관리비);
-            _Mapper.Map(차량유지비Response, 공용관리비);
-            _Mapper.Map(청소비Response, 공용관리비);
-            _Mapper.Map(피복비Response, 공용관리비);
-            _Mapper.Map(소독비Response, 공용관리비);
+            _Mapper.Map(난방비Response.Body.Item, 공용관리비);
+            _Mapper.Map(경비비Response.Body.Item, 공용관리비);
+            _Mapper.Map(기타부대비용Response.Body.Item, 공용관리비);
+            _Mapper.Map(수선비Response.Body.Item, 공용관리비);
+            _Mapper.Map(승강기유지비Response.Body.Item, 공용관리비);
+            _Mapper.Map(시설유지비Response.Body.Item, 공용관리비);
+            _Mapper.Map(안전점검비Response.Body.Item, 공용관리비);
+            _Mapper.Map(위탁관리수수료Response.Body.Item, 공용관리비);
+            _Mapper.Map(인건비Response.Body.Item, 공용관리비);
+            _Mapper.Map(재해예방비Response.Body.Item, 공용관리비);
+            _Mapper.Map(제사무비Response.Body.Item, 공용관리비);
+            _Mapper.Map(제세공과금Response.Body.Item, 공용관리비);
+            _Mapper.Map(지능형홈네트워크설비유지비Response.Body.Item, 공용관리비);
+            _Mapper.Map(차량유지비Response.Body.Item, 공용관리비);
+            _Mapper.Map(청소비Response.Body.Item, 공용관리비);
+            _Mapper.Map(피복비Response.Body.Item, 공용관리비);
+            _Mapper.Map(소독비Response.Body.Item, 공용관리비);
 
             await _Context.SaveChangesAsync(cancellationToken);
 

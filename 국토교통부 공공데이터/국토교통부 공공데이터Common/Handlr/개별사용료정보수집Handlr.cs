@@ -45,16 +45,16 @@ namespace 국토교통부_공공데이터Common.Handlr
             var 선거관리위원회운영비Response = await _APIService.Get선거관리위원회운영비(request);
 
             // 응답 데이터를 개별사용료 객체에 매핑
-            _Mapper.Map(급탕비Response, 개별사용료);
-            _Mapper.Map(난방비Response, 개별사용료);
-            _Mapper.Map(가스사용료Response, 개별사용료);
-            _Mapper.Map(전기료Response, 개별사용료);
-            _Mapper.Map(수도료Response, 개별사용료);
-            _Mapper.Map(정화조오물수수료Response, 개별사용료);
-            _Mapper.Map(생활폐기물수수료Response, 개별사용료);
-            _Mapper.Map(입주자대표회의운영비Response, 개별사용료);
-            _Mapper.Map(건물보험료Response, 개별사용료);
-            _Mapper.Map(선거관리위원회운영비Response, 개별사용료);
+            _Mapper.Map(급탕비Response.Body.Item, 개별사용료);
+            _Mapper.Map(난방비Response.Body.Item, 개별사용료);
+            _Mapper.Map(가스사용료Response.Body.Item, 개별사용료);
+            _Mapper.Map(전기료Response.Body.Item, 개별사용료);
+            _Mapper.Map(수도료Response.Body.Item, 개별사용료);
+            _Mapper.Map(정화조오물수수료Response.Body.Item, 개별사용료);
+            _Mapper.Map(생활폐기물수수료Response.Body.Item, 개별사용료);
+            _Mapper.Map(입주자대표회의운영비Response.Body.Item, 개별사용료);
+            _Mapper.Map(건물보험료Response.Body.Item, 개별사용료);
+            _Mapper.Map(선거관리위원회운영비Response.Body.Item, 개별사용료);
             // 데이터베이스에 업데이트
             await _DbContext.SaveChangesAsync(cancellationToken);
 

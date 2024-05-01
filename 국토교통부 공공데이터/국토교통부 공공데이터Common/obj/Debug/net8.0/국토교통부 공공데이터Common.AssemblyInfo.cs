@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("국토교통부 공공데이터Common")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f15bef54ef7650b31ad887e157439873832c325d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+826ee60c2b92b799b0ce5906512a00560641f3ca")]
 [assembly: System.Reflection.AssemblyProductAttribute("국토교통부 공공데이터Common")]
 [assembly: System.Reflection.AssemblyTitleAttribute("국토교통부 공공데이터Common")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
