@@ -19,9 +19,8 @@ namespace 국토교통부_공공데이터Common.Handlr
         }
         /// <summary>
         /// APIService로 전체목록을 Get하는 단계
-        /// 반복문 안에서 Mapping 하는 단계
-        /// Mapping된 Model 중복성검사 단계
-        /// 중복이 아닌 경우 Add하는 단계를 포함하는 공동주택단지구성Handlr프로세스
+        /// 반복문 안에서 동일한 DB에 KAptCode가 있는지 확인단계
+        /// 없는 경우 Model로 Mapping 하고 DB에 Add하는 단계를 포함하는 공동주택단지구성Handlr프로세스
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
