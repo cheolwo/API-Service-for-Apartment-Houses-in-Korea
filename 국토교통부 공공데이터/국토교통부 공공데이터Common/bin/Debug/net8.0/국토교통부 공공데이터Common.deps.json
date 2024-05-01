@@ -9,8 +9,10 @@
       "국토교통부 공공데이터Common/1.0.0": {
         "dependencies": {
           "Common": "1.0.0",
+          "MediatR": "12.2.0",
           "Microsoft.EntityFrameworkCore": "8.0.4",
-          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
+          "Quartz": "3.8.1"
         },
         "runtime": {
           "국토교통부 공공데이터Common.dll": {}

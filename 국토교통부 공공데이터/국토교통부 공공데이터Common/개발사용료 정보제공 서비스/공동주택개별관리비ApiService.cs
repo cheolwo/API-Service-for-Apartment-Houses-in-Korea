@@ -5,6 +5,7 @@ using 국토교통부_공공데이터Common.개발사용료_정보제공_서비�
 using 국토교통부_공공데이터Common.개발사용료_정보제공_서비스.ResponseModel;
 using 국토교통부_공공데이터Common.개발사용료_정보제공_서비스.ResponseModel.가스사용료;
 using 국토교통부_공공데이터Common.개발사용료_정보제공_서비스.ResponseModel.건물보험료;
+using 국토교통부_공공데이터Common.개발사용료_정보제공_서비스.ResponseModel.급탕비;
 using 국토교통부_공공데이터Common.개발사용료_정보제공_서비스.ResponseModel.난방비;
 using 국토교통부_공공데이터Common.개발사용료_정보제공_서비스.ResponseModel.생활폐기물수수료;
 using 국토교통부_공공데이터Common.개발사용료_정보제공_서비스.ResponseModel.선거관리위원회운영비;

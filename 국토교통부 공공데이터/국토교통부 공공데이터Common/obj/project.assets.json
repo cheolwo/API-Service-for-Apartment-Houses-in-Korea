@@ -2954,8 +2954,10 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Common >= 1.0.0",
+      "MediatR >= 12.2.0",
       "Microsoft.EntityFrameworkCore >= 8.0.4",
-      "Microsoft.Extensions.Configuration.Abstractions >= 8.0.0"
+      "Microsoft.Extensions.Configuration.Abstractions >= 8.0.0",
+      "Quartz >= 3.8.1"
     ]
   },
   "packageFolders": {
@@ -3012,6 +3014,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "MediatR": {
+            "target": "Package",
+            "version": "[12.2.0, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.4, )"
@@ -3019,6 +3025,10 @@
           "Microsoft.Extensions.Configuration.Abstractions": {
             "target": "Package",
             "version": "[8.0.0, )"
+          },
+          "Quartz": {
+            "target": "Package",
+            "version": "[3.8.1, )"
           }
         },
         "imports": [

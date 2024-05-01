@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace 국토교통부_공공데이터Common.공용관리비_정보제공서비스.인건비
+namespace 국토교통부_공공데이터Common.공용관리비_정보제공서비스.ResponseModel.인건비
 {
     [XmlRoot("response")]
     public class 인건비Response
