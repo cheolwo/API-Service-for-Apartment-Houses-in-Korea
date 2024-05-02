@@ -7,7 +7,7 @@ public class 선거관리위원회운영비MappingProfile : Profile
     public 선거관리위원회운영비MappingProfile()
     {
         CreateMap<Item, 개별사용료>()
-            .ForMember(dest => dest.가스공용금액, opt =>
+            .ForMember(dest => dest.선거관리위원회운영비, opt =>
             {
                 opt.Condition(src => src.ElectionMng != 0); // 값이 0이 아닌 경우에만 매핑
                 opt.MapFrom(src => src.ElectionMng);

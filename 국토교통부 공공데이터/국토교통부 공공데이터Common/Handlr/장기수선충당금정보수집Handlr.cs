@@ -39,10 +39,16 @@ namespace 국토교통부_공공데이터Common.Handlr
 
 
             // 응답 데이터를 장기수선충당금 객체에 매핑
-            _Mapper.Map(단지별월부과액Response, 장기수선충당금);
-            _Mapper.Map(단지별월사용액Response, 장기수선충당금);
-            _Mapper.Map(단지별적립요율Response, 장기수선충당금);
-            _Mapper.Map(단지별충당금잔액Response, 장기수선충당금);
+            _Mapper.Map(단지별월부과액Response.Body.Item, 장기수선충당금);
+            _Mapper.Map(단지별월사용액Response.Body.Item, 장기수선충당금);
+            _Mapper.Map(단지별적립요율Response.Body.Item, 장기수선충당금);
+            _Mapper.Map(단지별충당금잔액Response.Body.Item, 장기수선충당금);
+
+            Console.WriteLine($"날짜: {장기수선충당금.date}");
+            Console.WriteLine($"월부과액: {장기수선충당금.월부과액}");
+            Console.WriteLine($"월사용액: {장기수선충당금.월사용액}");
+            Console.WriteLine($"적립요율: {장기수선충당금.적립요율}%");
+            Console.WriteLine($"충당금잔액: {장기수선충당금.충당금잔액}");
 
             // 데이터베이스에 업데이트
             await _DbContext.SaveChangesAsync(cancellationToken);

@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\국토교통부 공공데이터Common\국토교통부 공공데이터Common.csproj" />
   </ItemGroup>
 

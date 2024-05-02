@@ -7,7 +7,11 @@ using 국토교통부_공공데이터Common.공동주택_기본정보_제공서�
 
 namespace 국토교통부_공공데이터Common.공동주택_기본정보_제공서비스
 {
-    public class 공동주택단지정보APIService
+    public interface I공동주택단지정보APIService
+    {
+        Task<공동주택기본정보Response> Get공동주택기본정보(공동주택기본정보Request request);
+    }
+    public class 공동주택단지정보APIService : I공동주택단지정보APIService
     {
         private readonly string _serviceKey;
         public HttpClient _httpClient;
@@ -20,11 +24,7 @@ namespace 국토교통부_공공데이터Common.공동주택_기본정보_제공
         public async Task<공동주택기본정보Response> Get공동주택기본정보(공동주택기본정보Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1613000/AptBasisInfoService1/getAphusBassInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)
@@ -47,11 +47,7 @@ namespace 국토교통부_공공데이터Common.공동주택_기본정보_제공
         public async Task<공동주택상세정보Response> Get공동주택상세정보(공동주택상세정보Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1613000/AptBasisInfoService1/getAphusDtlInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)

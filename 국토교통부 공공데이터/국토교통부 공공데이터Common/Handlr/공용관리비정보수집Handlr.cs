@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using 국토교통부_공공데이터Common.Model;
+using 국토교통부_공공데이터Common.Model.ComplexExpense;
 using 국토교통부_공공데이터Common.공용관리비_정보제공서비스;
 using 국토교통부_공공데이터Common.공용관리비정보제공서비스;
 
@@ -34,7 +35,6 @@ namespace 국토교통부_공공데이터Common.Handlr
             }
 
             // 각 API 서비스를 통해 외부 데이터 요청 및 응답 매핑
-            var 난방비Response = await _APIService.Get난방비(request);
             var 경비비Response = await _APIService.Get경비비(request);
             var 기타부대비용Response = await _APIService.Get기타부대비용(request);
             var 수선비Response = await _APIService.Get수선비(request);
@@ -52,23 +52,44 @@ namespace 국토교통부_공공데이터Common.Handlr
             var 피복비Response = await _APIService.Get피복비(request);
             var 소독비Response = await _APIService.Get소독비(request);
 
-            _Mapper.Map(난방비Response.Body.Item, 공용관리비);
             _Mapper.Map(경비비Response.Body.Item, 공용관리비);
-            _Mapper.Map(기타부대비용Response.Body.Item, 공용관리비);
+            _Mapper.Map(기타부대비용Response.Body.Item, 공용관리비.기타부대비용);
             _Mapper.Map(수선비Response.Body.Item, 공용관리비);
             _Mapper.Map(승강기유지비Response.Body.Item, 공용관리비);
             _Mapper.Map(시설유지비Response.Body.Item, 공용관리비);
             _Mapper.Map(안전점검비Response.Body.Item, 공용관리비);
             _Mapper.Map(위탁관리수수료Response.Body.Item, 공용관리비);
-            _Mapper.Map(인건비Response.Body.Item, 공용관리비);
+            _Mapper.Map(인건비Response.Body.Item, 공용관리비.인건비);
             _Mapper.Map(재해예방비Response.Body.Item, 공용관리비);
-            _Mapper.Map(제사무비Response.Body.Item, 공용관리비);
-            _Mapper.Map(제세공과금Response.Body.Item, 공용관리비);
+            _Mapper.Map(제사무비Response.Body.Item, 공용관리비.제사무비);
+            _Mapper.Map(제세공과금Response.Body.Item, 공용관리비.제세공과금);
             _Mapper.Map(지능형홈네트워크설비유지비Response.Body.Item, 공용관리비);
-            _Mapper.Map(차량유지비Response.Body.Item, 공용관리비);
+            _Mapper.Map(차량유지비Response.Body.Item, 공용관리비.차량유지비);
             _Mapper.Map(청소비Response.Body.Item, 공용관리비);
             _Mapper.Map(피복비Response.Body.Item, 공용관리비);
             _Mapper.Map(소독비Response.Body.Item, 공용관리비);
+
+            // 공용관리비 객체의 속성들을 출력
+            Console.WriteLine($"날짜: {공용관리비.date}");
+            Console.WriteLine($"경비비: {공용관리비.경비비}");
+            Console.WriteLine($"교육훈련비: {공용관리비.교육훈련비}");
+            Console.WriteLine($"소독비: {공용관리비.소독비}");
+            Console.WriteLine($"수선비: {공용관리비.수선비}");
+            Console.WriteLine($"승강기유지비: {공용관리비.승강기유지비}");
+            Console.WriteLine($"시설유지비: {공용관리비.시설유지비}");
+            Console.WriteLine($"안전점검비: {공용관리비.안전점검비}");
+            Console.WriteLine($"위탁관리수수료: {공용관리비.위탁관리수수료}");
+            Console.WriteLine($"재해예방비: {공용관리비.재해예방비}");
+            Console.WriteLine($"지능형홈네트워크설비유지비: {공용관리비.지능형홈네트워크설비유지비}");
+            Console.WriteLine($"청소비: {공용관리비.청소비}");
+            Console.WriteLine($"피복비: {공용관리비.피복비}");
+
+            // 인건비 객체의 속성들을 출력
+            Console.WriteLine($"인건비: {공용관리비.인건비}");
+            Console.WriteLine($"인건비: {공용관리비.제사무비}");
+            Console.WriteLine($"인건비: {공용관리비.제세공과금}");
+            Console.WriteLine($"인건비: {공용관리비.차량유지비}");
+            Console.WriteLine($"인건비: {공용관리비.기타부대비용}");
 
             await _Context.SaveChangesAsync(cancellationToken);
 

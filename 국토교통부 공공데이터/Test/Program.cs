@@ -1,5 +1,8 @@
 ﻿// C# 샘플 코드
+using System;
 using System.Net;
+using System.Net.Http;
+using System.IO;
 
 namespace ConsoleApp1
 {
@@ -8,10 +11,10 @@ namespace ConsoleApp1
         static HttpClient client = new HttpClient();
         static void Main(string[] args)
         {
-            string url = "http://apis.data.go.kr/1613000/AptListService2/getTotalAptList"; // URL
+            string url = "http://apis.data.go.kr/1611000/AptRepairsCostService/getHsmpMonthRetalFeeInfo"; // URL
             url += "?ServiceKey=" + "D0wkCvWHdCeJsYuU8A14KWl7mzOJ%2FiKbyKR%2F5xvnALYMf5wi5rcbCp2CXsx6xCsBhvgl5PJ8u%2Fwilufv%2FjhMcg%3D%3D"; // Service Key
-            url += "&pageNo=1";
-            url += "&numOfRows=19724";
+            url += "&kaptCode=A10027953";
+            url += "&searchDate=201507";
 
             var request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "GET";

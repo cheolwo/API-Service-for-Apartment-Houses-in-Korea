@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Configuration;
-using System.Web;
 using System.Xml.Serialization;
 using 국토교통부_공공데이터Common.장기수선충당금_정보서비스.ResponseModel.월부과액;
 using 국토교통부_공공데이터Common.장기수선충당금_정보서비스.ResponseModel.월사용액;
@@ -21,12 +20,7 @@ namespace 국토교통부_공공데이터Common.장기수선충당금_정보서�
         public async Task<단지별월부과액Response> Get단지별월부과액(장기수선충당금Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1611000/AptIndvdlzManageCostService/getHsmpHotWaterCostInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-            queryParameters["searchDate"] = request.searchDate;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode + "&searchDate=" + request.searchDate;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)
@@ -49,12 +43,7 @@ namespace 국토교통부_공공데이터Common.장기수선충당금_정보서�
         public async Task<단지별월사용액Response> Get단지별월사용액(장기수선충당금Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1611000/AptIndvdlzManageCostService/getHsmpHotWaterCostInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-            queryParameters["searchDate"] = request.searchDate;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode + "&searchDate=" + request.searchDate;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)
@@ -77,12 +66,7 @@ namespace 국토교통부_공공데이터Common.장기수선충당금_정보서�
         public async Task<단지별적립요율Response> Get단지별적립요율(장기수선충당금Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1611000/AptIndvdlzManageCostService/getHsmpHotWaterCostInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-            queryParameters["searchDate"] = request.searchDate;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode + "&searchDate=" + request.searchDate;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)
@@ -105,12 +89,7 @@ namespace 국토교통부_공공데이터Common.장기수선충당금_정보서�
         public async Task<단지별충당금잔액Response> Get단지별충당금잔액(장기수선충당금Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1611000/AptIndvdlzManageCostService/getHsmpHotWaterCostInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-            queryParameters["searchDate"] = request.searchDate;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode + "&searchDate=" + request.searchDate;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)

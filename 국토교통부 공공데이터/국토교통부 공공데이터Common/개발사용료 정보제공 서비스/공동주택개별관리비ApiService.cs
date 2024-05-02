@@ -2,7 +2,6 @@
 using System.Web;
 using System.Xml.Serialization;
 using 국토교통부_공공데이터Common.개발사용료_정보제공_서비스;
-using 국토교통부_공공데이터Common.개발사용료_정보제공_서비스.ResponseModel;
 using 국토교통부_공공데이터Common.개발사용료_정보제공_서비스.ResponseModel.가스사용료;
 using 국토교통부_공공데이터Common.개발사용료_정보제공_서비스.ResponseModel.건물보험료;
 using 국토교통부_공공데이터Common.개발사용료_정보제공_서비스.ResponseModel.급탕비;
@@ -16,10 +15,14 @@ using 국토교통부_공공데이터Common.개발사용료_정보제공_서비�
 
 namespace 국토교통부_공공데이터Common.개발사용료정보제공서비스
 {
+    public interface I공동주택개별관리비APIService
+    {
+        Task<급탕비Response> Get급탕비(개별사용료정보제공Request request);
+    }
     /// <summary>
     /// http://apis.data.go.kr/1611000/AptCmnuseManageCostService
     /// </summary>
-    public class 공동주택개별관리비APIService
+    public class 공동주택개별관리비APIService : I공동주택개별관리비APIService
     {
         private readonly HttpClient _httpClient;
         private string _serviceKey;
@@ -32,12 +35,7 @@ namespace 국토교통부_공공데이터Common.개발사용료정보제공서�
         public async Task<급탕비Response> Get급탕비(개별사용료정보제공Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1611000/AptIndvdlzManageCostService/getHsmpHotWaterCostInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-            queryParameters["searchDate"] = request.searchDate;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode + "&searchDate=" + request.searchDate;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)
@@ -60,12 +58,7 @@ namespace 국토교통부_공공데이터Common.개발사용료정보제공서�
         public async Task<난방비Response> Get난방비(개별사용료정보제공Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1611000/AptIndvdlzManageCostService/getHsmpHeatCostInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-            queryParameters["searchDate"] = request.searchDate;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode + "&searchDate=" + request.searchDate;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)
@@ -88,12 +81,7 @@ namespace 국토교통부_공공데이터Common.개발사용료정보제공서�
         public async Task<가스사용료Response> Get가스사용료(개별사용료정보제공Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1611000/AptIndvdlzManageCostService/getHsmpGasRentalFeeInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-            queryParameters["searchDate"] = request.searchDate;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode + "&searchDate=" + request.searchDate;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)
@@ -116,12 +104,7 @@ namespace 국토교통부_공공데이터Common.개발사용료정보제공서�
         public async Task<전기료Response> Get전기료(개별사용료정보제공Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1611000/AptIndvdlzManageCostService/getHsmpElectricityCostInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-            queryParameters["searchDate"] = request.searchDate;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode + "&searchDate=" + request.searchDate;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)
@@ -144,12 +127,7 @@ namespace 국토교통부_공공데이터Common.개발사용료정보제공서�
         public async Task<수도료Response> Get수도료(개별사용료정보제공Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1611000/AptIndvdlzManageCostService/getHsmpWaterCostInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-            queryParameters["searchDate"] = request.searchDate;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode + "&searchDate=" + request.searchDate;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)
@@ -172,12 +150,7 @@ namespace 국토교통부_공공데이터Common.개발사용료정보제공서�
         public async Task<정화조오물수수료Response> Get정화조오물수수료(개별사용료정보제공Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1611000/AptIndvdlzManageCostService/getHsmpWaterPurifierTankFeeInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-            queryParameters["searchDate"] = request.searchDate;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode + "&searchDate=" + request.searchDate;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)
@@ -200,12 +173,7 @@ namespace 국토교통부_공공데이터Common.개발사용료정보제공서�
         public async Task<생활폐기물수수료Response> Get생활폐기물수수료(개별사용료정보제공Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1611000/AptIndvdlzManageCostService/getHsmpDomesticWasteFeeInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-            queryParameters["searchDate"] = request.searchDate;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode + "&searchDate=" + request.searchDate;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)
@@ -228,12 +196,7 @@ namespace 국토교통부_공공데이터Common.개발사용료정보제공서�
         public async Task<입주자대표회의운영비Response> Get입주자대표회의운영비(개별사용료정보제공Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1611000/AptIndvdlzManageCostService/getHsmpMovingInRepresentationMtgInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-            queryParameters["searchDate"] = request.searchDate;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode + "&searchDate=" + request.searchDate;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)
@@ -256,12 +219,7 @@ namespace 국토교통부_공공데이터Common.개발사용료정보제공서�
         public async Task<건물보험료Response> Get건물보험료(개별사용료정보제공Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1611000/AptIndvdlzManageCostService/getHsmpBuildingInsuranceFeeInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-            queryParameters["searchDate"] = request.searchDate;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode + "&searchDate=" + request.searchDate;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)
@@ -284,12 +242,7 @@ namespace 국토교통부_공공데이터Common.개발사용료정보제공서�
         public async Task<선거관리위원회운영비Response> Get선거관리위원회운영비(개별사용료정보제공Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1611000/AptIndvdlzManageCostService/getHsmpElectionOrpnsInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-            queryParameters["searchDate"] = request.searchDate;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode + "&searchDate=" + request.searchDate;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)

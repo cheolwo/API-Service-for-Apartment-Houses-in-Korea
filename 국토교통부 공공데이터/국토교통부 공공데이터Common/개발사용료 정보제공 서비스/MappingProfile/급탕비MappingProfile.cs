@@ -7,11 +7,11 @@ public class 급탕비MappingProfile : Profile
     public 급탕비MappingProfile()
     {
         CreateMap<Item, 개별사용료>()
-            .ForMember(dest => dest.가스공용금액, opt => {
+            .ForMember(dest => dest.급탕공용금액, opt => {
                 opt.Condition(src => src.WaterHotC != 0); // 값이 0이 아닌 경우에만 매핑
                 opt.MapFrom(src => src.WaterHotC);
             })
-            .ForMember(dest => dest.가스전용금액, opt => {
+            .ForMember(dest => dest.급탕전용금액, opt => {
                 opt.Condition(src => src.WaterHotC != 0); // 값이 0이 아닌 경우에만 매핑
                 opt.MapFrom(src => src.WaterHotP);
             });

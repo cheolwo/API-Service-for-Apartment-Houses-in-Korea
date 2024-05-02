@@ -39,3 +39,5 @@ C:\Users\user\Desktop\CommonHouse\국토교통부 공공데이터\국토교통�
 C:\Users\user\Desktop\CommonHouse\국토교통부 공공데이터\국토교통부 공공데이터Common\obj\Debug\net8.0\국토교통부 공공데이터Common.sourcelink.json
 C:\Users\user\Desktop\CommonHouse\국토교통부 공공데이터\국토교통부 공공데이터Common\obj\Debug\net8.0\국토교통부 공공.FD4AE975.Up2Date
 C:\Users\user\Desktop\CommonHouse\국토교통부 공공데이터\국토교통부 공공데이터Common\obj\Debug\net8.0\ref\국토교통부 공공데이터Common.dll
+C:\Users\user\Desktop\CommonHouse\국토교통부 공공데이터\국토교통부 공공데이터Common\bin\Debug\net8.0\국토교통부 공공데이터Common.runtimeconfig.json
+C:\Users\user\Desktop\CommonHouse\국토교통부 공공데이터\국토교통부 공공데이터Common\obj\Debug\net8.0\국토교통부 공공데이터Common.genruntimeconfig.cache

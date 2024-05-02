@@ -37,7 +37,19 @@ namespace 국토교통부_공공데이터Common.Handlr
 
 
             // 응답 데이터를 에너지사용정보 객체에 매핑
-            _Mapper.Map(단지에너지사용량Response, 에너지사용정보);
+            _Mapper.Map(단지에너지사용량Response.Body.Item, 에너지사용정보);
+
+            Console.WriteLine($"날짜: {에너지사용정보.date}");
+            Console.WriteLine($"난방사용금액: {에너지사용정보.난방사용금액}");
+            Console.WriteLine($"난방사용량: {에너지사용정보.난방사용량}");
+            Console.WriteLine($"급탕사용금액: {에너지사용정보.급탕사용금액}");
+            Console.WriteLine($"급탕사용량: {에너지사용정보.급탕사용량}");
+            Console.WriteLine($"가스사용금액: {에너지사용정보.가스사용금액}");
+            Console.WriteLine($"가스사용량: {에너지사용정보.가스사용량}");
+            Console.WriteLine($"전기사용금액: {에너지사용정보.전기사용금액}");
+            Console.WriteLine($"전기사용량: {에너지사용정보.전기사용량}");
+            Console.WriteLine($"수도사용금액: {에너지사용정보.수도사용금액}");
+            Console.WriteLine($"수도사용량: {에너지사용정보.수도사용량}");
 
             // 데이터베이스에 업데이트
             await _DbContext.SaveChangesAsync(cancellationToken);

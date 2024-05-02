@@ -23,6 +23,12 @@ namespace 국토교통부_공공데이터Common.공동주택_기본정보_제공
 
     public class 공동주택기본정보
     {
+        [XmlElement("item")]
+        public 공동주택기본정보Item Item { get; set; }
+    }
+
+    public class 공동주택기본정보Item
+    {
         [XmlElement("kaptCode")]
         public string KaptCode { get; set; }
 

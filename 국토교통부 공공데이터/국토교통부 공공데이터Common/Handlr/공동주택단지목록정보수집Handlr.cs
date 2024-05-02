@@ -40,6 +40,7 @@ namespace 국토교통부_공공데이터Common.Handlr
                 {
                     // 존재하지 않는 경우, 새 엔티티를 생성하여 추가합니다.
                     var mappedEntity = _mapper.Map<공동주택>(item);
+                    Console.WriteLine(mappedEntity.단지명);
                     _context.Set<공동주택>().Add(mappedEntity);
                 }
                 else

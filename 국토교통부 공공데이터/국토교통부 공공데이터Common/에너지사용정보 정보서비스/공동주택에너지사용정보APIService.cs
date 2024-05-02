@@ -23,12 +23,7 @@ namespace 국토교통부_공공데이터Common.에너지사용정보_정보서�
         public async Task<단지에너지사용량Response> Get단지에너지사용량(단지에너지사용량Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1611000/AptIndvdlzManageCostService/getHsmpHotWaterCostInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-            queryParameters["searchDate"] = request.searchDate;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode + "&searchDate=" + request.searchDate;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)
@@ -51,12 +46,7 @@ namespace 국토교통부_공공데이터Common.에너지사용정보_정보서�
         public async Task<단지평균에너지사용금액Response> Get단지평균에너지사용금액(단지평균에너지사용금액Request request)
         {
             string baseUrl = "http://apis.data.go.kr/1611000/AptIndvdlzManageCostService/getHsmpHotWaterCostInfo";
-            var queryParameters = HttpUtility.ParseQueryString(string.Empty);
-            queryParameters["ServiceKey"] = _serviceKey;
-            queryParameters["kaptCode"] = request.kaptCode;
-            queryParameters["searchDate"] = request.searchDate;
-
-            string url = $"{baseUrl}?{queryParameters}";
+            string url = baseUrl + "?ServiceKey=" + _serviceKey + "&kaptCode=" + request.kaptCode + "&searchDate=" + request.searchDate;
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
             if (!response.IsSuccessStatusCode)

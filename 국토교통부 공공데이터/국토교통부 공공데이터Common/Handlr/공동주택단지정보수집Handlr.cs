@@ -40,7 +40,7 @@ public class 공동주택단지정보수집Handlr : IRequestHandler<공동주택
     {
         // 공동주택DbContext를 통해 Address가 Null인 공동주택을 Load합니다.
         var 공동주택목록 = await _context.Set<공동주택>()
-            .Where(x => string.IsNullOrEmpty(x.Address))
+            .Where(x => string.IsNullOrEmpty(x.법정동주소))
             .ToListAsync(cancellationToken);
 
         // 공동주택목록을 순회하며 각 공동주택에 대한 상세정보를 요청합니다.
