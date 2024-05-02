@@ -48,14 +48,14 @@ namespace 국토교통부_공공데이터Common.공용관리비_정보제공서�
 
         // 사무용품 비용
         [XmlElement("officeSupply")]
-        public string OfficeSupply { get; set; }
+        public long OfficeSupply { get; set; }
 
         // 도서 및 인쇄비
         [XmlElement("bookSupply")]
-        public string BookSupply { get; set; }
+        public long BookSupply { get; set; }
 
         // 교통비
         [XmlElement("transportCost")]
-        public string TransportCost { get; set; }
+        public long TransportCost { get; set; }
     }
 }

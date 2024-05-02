@@ -1,4 +1,5 @@
 ﻿using System.Xml.Serialization;
+using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
 
 namespace 국토교통부_공공데이터Common.Model.ComplexExpense
 {
@@ -6,14 +7,14 @@ namespace 국토교통부_공공데이터Common.Model.ComplexExpense
     {
         // 사무용품 비용
         [XmlElement("officeSupply")]
-        public string 사무용품비용 { get; set; }
+        public TemporaryLongValueGenerator 사무용품비용 { get; set; }
 
         // 도서 및 인쇄비
         [XmlElement("bookSupply")]
-        public string 도서및인쇄비 { get; set; }
+        public TemporaryLongValueGenerator 도서및인쇄비 { get; set; }
 
         // 교통비
         [XmlElement("transportCost")]
-        public string 교통비 { get; set; }
+        public TemporaryLongValueGenerator 교통비 { get; set; }
     }
 }
