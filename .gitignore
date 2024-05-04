@@ -399,4 +399,7 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
+# Ignore appsettings.json to prevent sensitive data exposure
+appsettings.json
+
 # End of https://www.toptal.com/developers/gitignore/api/csharp
