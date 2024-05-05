@@ -86,6 +86,28 @@ classDiagram
         +string searchDate
     }
 ```
+```Mermaid
+sequenceDiagram
+    participant Client as Client
+    participant Service as 공동주택개별관리비APIService
+    participant API as 외부 API (국토교통부)
+    participant Serializer as XmlSerializer
+
+    Client->>+Service: Get급탕비(request)
+    Service->>+API: HTTP GET request (URL, ServiceKey, kaptCode, searchDate)
+    API-->>-Service: HTTP Response
+
+    alt 성공적인 응답
+        Service->>Service: Check Status Code (200 OK)
+        Service->>+Serializer: Deserialize XML to 급탕비Response
+        Serializer-->>-Service: 급탕비Response 객체
+        Service-->>-Client: 급탕비Response 객체
+    else 실패한 응답
+        Service->>Service: Read Error Content
+        Service-->>-Client: Throw HttpRequestException
+    end
+```
+
 # Configuration Settings
 
 Below you will find a basic example of the necessary `appsettings.json` configuration for this project. Please make sure to adjust the settings according to your local environment and security requirements.
