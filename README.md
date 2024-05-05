@@ -75,30 +75,27 @@ classDiagram
 ```
 ```mermaid
 erDiagram
-    공동주택 ||--o{ 개별사용료 : "has"
-    공동주택 ||--o{ 에너지사용정보 : "has"
-    공동주택 ||--o{ 공용관리비 : "has"
-    공동주택 ||--o{ 장기수선충당금 : "has"
+    Student ||--o{ Enrollment : "enrolls"
+    Course ||--o{ Enrollment : "offered"
+    
+    Student {
+        int id PK "Student ID"
+        string name "Name"
+        string email "Email"
+    }
+    
+    Course {
+        int id PK "Course ID"
+        string name "Course Name"
+        int credits "Credits"
+    }
+    
+    Enrollment {
+        int studentId FK "Student ID"
+        int courseId FK "Course ID"
+        string grade "Grade"
+    }
 
-    개별사용료 {
-        단지코드 PK
-        date PK
-    }
-    에너지사용정보 {
-        단지코드 PK
-        date PK
-    }
-    공용관리비 {
-        단지코드 PK
-        date PK
-    }
-    장기수선충당금 {
-        단지코드 PK
-        date PK
-    }
-    공동주택 {
-        단지코드 PK
-    }
 
 ```
 
