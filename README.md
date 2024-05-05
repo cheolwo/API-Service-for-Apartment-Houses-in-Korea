@@ -46,7 +46,12 @@ Stay tuned for updates as we progress. We value your feedback to help shape the 
 ![image](https://github.com/cheolwo/CommonHouse/assets/25167316/94547669-dcb0-4932-a3d7-fd4afc3a9770)
 
 # Diagram
-
+```mermaid
+graph LR
+    A --> B
+    B --> C
+    C --> A
+```
 # Configuration Settings
 
 Below you will find a basic example of the necessary `appsettings.json` configuration for this project. Please make sure to adjust the settings according to your local environment and security requirements.
