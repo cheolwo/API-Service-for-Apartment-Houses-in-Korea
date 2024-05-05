@@ -1,3 +1,11 @@
+# 공공데이터 링크
+https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15058453
+https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15059160
+https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15057937
+https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15012964
+https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15059469
+https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15057332
+
 <h2 align="center"><strong><span style="color:red;">프로세스</span></strong></h2>
 
 ![image](https://github.com/cheolwo/CommonHouse/assets/25167316/fa4bca89-aecb-46d4-a4cc-01f7712c5c87)
@@ -33,7 +41,7 @@ Below you will find a basic example of the necessary `appsettings.json` configur
   "ConnectionStrings": {
     "공동주택": "Server=localhost\\SQLEXPRESS01;Database=공동주택Db;Trusted_Connection=True;"
   },
-   "공공데이터ServiceKey": ""
+   "공공데이터ServiceKey": "Your Service Key"
 }
 
 ```
