@@ -1,10 +1,20 @@
 ## Future Development
 
-Our project is continually evolving. Here are some of the areas we are currently focusing on:
+As we continue to develop and enhance our project, we are planning to integrate several new APIs from the Ministry of Land, Infrastructure and Transport to enrich our application. These APIs will provide extensive data and functionality related to communal housing management. Here is what we are planning to integrate:
 
-- **Feature Enhancement**: We are working on adding more integrations with other platforms.
-- **Performance**: Improving the performance and scalability of our application.
-- **Security**: Enhancing the security features to ensure data protection.
+### Planned API Integrations
+
+- **국토교통부_공동주택 입찰결과공지 정보제공 서비스**: This service provides detailed information on the results of bidding for communal housing projects. [More Info](https://www.data.go.kr/data/15059177/openapi.do)
+
+- **국토교통부_공동주택 입찰공고 정보제공 서비스**: This service announces bidding opportunities for communal housing, enabling stakeholders to participate in upcoming projects. [More Info](https://www.data.go.kr/data/15058166/openapi.do)
+
+- **국토교통부_공동주택 유지관리 이력 정보제공 서비스**: This API will provide a comprehensive history of maintenance records for communal housing, enhancing our data analytics capabilities. [More Info](https://www.data.go.kr/data/15058045/openapi.do)
+
+- **국토교통부_공동주택 수의계약 공지 정보제공 서비스**: This service publishes notices of negotiated contracts related to communal housing, providing transparency in contract awarding processes. [More Info](https://www.data.go.kr/data/15057758/openapi.do)
+
+These integrations will allow us to offer more comprehensive services to our users and help communal housing administrators manage their properties more efficiently.
+
+We are excited about the possibilities these new features will bring and we are eager to see how they will improve our service offerings. Stay tuned for updates as we progress in our development journey!
 
 Stay tuned for updates as we progress. We value your feedback to help shape the future of our project!
 
