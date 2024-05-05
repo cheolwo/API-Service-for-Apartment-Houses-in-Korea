@@ -72,26 +72,6 @@ classDiagram
     공동주택개별관리비APIService --> IConfiguration : uses
     I공동주택개별관리비APIService --> 개별사용료정보제공Request : uses
     I공동주택개별관리비APIService --> 급탕비Response : returns
-
-sequenceDiagram
-    participant Client as Client
-    participant Service as 공동주택개별관리비APIService
-    participant API as 외부 API
-    participant Serializer as XmlSerializer
-
-    Client->>+Service: Get급탕비(request)
-    Service->>+API: HTTP GET request (url)
-    API-->>-Service: HTTP Response
-
-    alt 성공적인 응답
-        Service->>+Serializer: Deserialize XML
-        Serializer-->>-Service: 급탕비Response
-        Service-->>-Client: 급탕비Response
-    else 실패한 응답
-        Service->>Service: Read Error Content
-        Service-->>-Client: Throw HttpRequestException
-    end
-
 ```
 
 # Configuration Settings
