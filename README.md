@@ -37,7 +37,7 @@ Stay tuned for updates as we progress. We value your feedback to help shape the 
 ![image](https://github.com/cheolwo/CommonHouse/assets/25167316/fa4bca89-aecb-46d4-a4cc-01f7712c5c87)
 
 
-<h2 align="center"><strong><span style="color:red;">ERD</span></strong></h2>
+<h2 align="center"><strong><span style="color:red;">ERD Example</span></strong></h2>
 
 ```mermaid
 erDiagram
@@ -67,70 +67,8 @@ erDiagram
     }
 ```
 
-<h2 align="center"><strong><span style="color:red;">APIService Example</span></strong></h2>
+<h2 align="center"><strong><span style="color:red;">DFD Example</span></strong></h2>
 
-```mermaid
-classDiagram
-    class I공동주택개별관리비APIService {
-        <<interface>>
-        +Get급탕비(개별사용료정보제공Request request) Task<급탕비Response>
-    }
-    class 공동주택개별관리비APIService {
-        -HttpClient _httpClient
-        -string _serviceKey
-        +공동주택개별관리비APIService(HttpClient httpClient, IConfiguration configuration)
-        +Get급탕비(개별사용료정보제공Request request) Task<급탕비Response>
-    }
-    class HttpClient {
-    }
-    class IConfiguration {
-    }
-    class 개별사용료정보제공Request {
-    }
-    class 급탕비Response {
-    }
-
-    공동주택개별관리비APIService --|> I공동주택개별관리비APIService : implements
-    공동주택개별관리비APIService --> HttpClient : uses
-    공동주택개별관리비APIService --> IConfiguration : uses
-    I공동주택개별관리비APIService --> 개별사용료정보제공Request : uses
-    I공동주택개별관리비APIService --> 급탕비Response : returns
-```
-
-```mermaid
-classDiagram
-    공동주택단지목록정보수집Handler ..|> IRequestHandler : implements
-    공동주택단지목록정보수집Handler : +IMapper _mapper
-    공동주택단지목록정보수집Handler : +공동주택DbContext _context
-    공동주택단지목록정보수집Handler : +공동주택단지목록APIService _APIService
-    공동주택단지목록정보수집Handler : +Handle(공동주택단지Request request, CancellationToken cancellationToken) Task<Unit>
-    
-    공동주택단지목록정보수집Handler --> "1" IMapper : uses
-    공동주택단지목록정보수집Handler --> "1" 공동주택DbContext : uses
-    공동주택단지목록정보수집Handler --> "1" 공동주택단지목록APIService : uses
-
-    class 공동주택 {
-        string 단지코드
-        string 단지명
-    }
-
-    class IMapper {
-        <<interface>>
-        +Map()
-    }
-
-    class 공동주택DbContext {
-        +Set()
-        +SaveChangesAsync()
-    }
-
-    class 공동주택단지목록APIService {
-        +GetTotalAptListAsync() List
-    }
-
-    class 공동주택단지Request {
-    }
-```
 ```mermaid
 sequenceDiagram
     participant Client as Client
