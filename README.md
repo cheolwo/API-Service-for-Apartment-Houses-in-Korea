@@ -67,7 +67,7 @@ erDiagram
     }
 ```
 
-<h2 align="center"><strong><span style="color:red;">DFD Example</span></strong></h2>
+<h2 align="center"><strong><span style="color:red;">Handlr DFD Example</span></strong></h2>
 
 ```mermaid
 sequenceDiagram
