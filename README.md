@@ -32,18 +32,35 @@ Stay tuned for updates as we progress. We value your feedback to help shape the 
 - [데이터 API 6 국토교통부_공동주택관리비(장기수선충당금)정보서비스](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15059160)
 
 
-<h2 align="center"><strong><span style="color:red;">프로세스</span></strong></h2>
+<h2 align="center"><strong><span style="color:red;">ERD Example</span></strong></h2>
 
-![image](https://github.com/cheolwo/CommonHouse/assets/25167316/fa4bca89-aecb-46d4-a4cc-01f7712c5c87)
+```mermaid
+erDiagram
+    "공동주택" ||--o{ "개별사용료" : has
+    "공동주택" ||--o{ "에너지사용정보" : has
+    "공동주택" ||--o{ "공용관리비" : has
+    "공동주택" ||--o{ "장기수선충당금" : has
 
-
-<h2 align="center"><strong><span style="color:red;">ERD</span></strong></h2>
-
-![image](https://github.com/cheolwo/CommonHouse/assets/25167316/7f60bf14-a40e-4060-9a13-8c9a832c6bb1)
-
-<h2 align="center"><strong><span style="color:red;">공통적인 모듈 간 관계</span></strong></h2>
-
-![image](https://github.com/cheolwo/CommonHouse/assets/25167316/94547669-dcb0-4932-a3d7-fd4afc3a9770)
+    "개별사용료" {
+        string complexCode PK "단지코드"
+        string date PK "날짜"
+    }
+    "에너지사용정보" {
+        string complexCode PK "단지코드"
+        string date PK "날짜"
+    }
+    "공용관리비" {
+        string complexCode PK "단지코드"
+        string date PK "날짜"
+    }
+    "장기수선충당금" {
+        string complexCode PK "단지코드"
+        string date PK "날짜"
+    }
+    "공동주택" {
+        string complexCode PK "단지코드"
+    }
+```
 
 # Configuration Settings
 
