@@ -90,6 +90,34 @@ sequenceDiagram
 
 ```
 
+<h2 align="center"><strong><span style="color:red;">Handlr DFD Example</span></strong></h2>
+
+```mermaid
+sequenceDiagram
+    participant Client as Client
+    participant Handler as 공동주택단지목록정보수집Handler
+    participant APIService as 공동주택단지목록APIService
+    participant Database as 공동주택DbContext
+    participant Mapper as IMapper
+
+    Client->>+Handler: Handle(request, cancellationToken)
+    Handler->>+APIService: GetTotalAptListAsync()
+    APIService-->>-Handler: aptResponse
+    loop For Each Item in aptResponse
+        Handler->>+Database: Check Existing Entity (단지코드)
+        Database-->>-Handler: existingEntity
+        alt If not exists
+            Handler->>+Mapper: Map(item)
+            Mapper-->>-Handler: new Entity
+            Handler->>Database: Add(new Entity)
+        else If exists
+            Handler->>Mapper: Update existingEntity
+        end
+    end
+    Handler->>+Database: SaveChangesAsync()
+    Database-->>-Handler: Commit
+    Handler-->>-Client: Unit.Value
+```
 
 <h2 align="center"><strong><span style="color:red;">ERD Example</span></strong></h2>
 
@@ -119,35 +147,6 @@ erDiagram
     "공동주택" {
         string complexCode PK "단지코드"
     }
-```
-
-<h2 align="center"><strong><span style="color:red;">Handlr DFD Example</span></strong></h2>
-
-```mermaid
-sequenceDiagram
-    participant Client as Client
-    participant Handler as 공동주택단지목록정보수집Handler
-    participant APIService as 공동주택단지목록APIService
-    participant Database as 공동주택DbContext
-    participant Mapper as IMapper
-
-    Client->>+Handler: Handle(request, cancellationToken)
-    Handler->>+APIService: GetTotalAptListAsync()
-    APIService-->>-Handler: aptResponse
-    loop For Each Item in aptResponse
-        Handler->>+Database: Check Existing Entity (단지코드)
-        Database-->>-Handler: existingEntity
-        alt If not exists
-            Handler->>+Mapper: Map(item)
-            Mapper-->>-Handler: new Entity
-            Handler->>Database: Add(new Entity)
-        else If exists
-            Handler->>Mapper: Update existingEntity
-        end
-    end
-    Handler->>+Database: SaveChangesAsync()
-    Database-->>-Handler: Commit
-    Handler-->>-Client: Unit.Value
 ```
 
 # Configuration Settings
