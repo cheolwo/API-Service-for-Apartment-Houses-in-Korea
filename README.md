@@ -65,3 +65,4 @@ erDiagram
 <h2 align="center"><strong><span style="color:red;">Dcinside GitHub 갤러리 연재글</span></strong></h2>
 https://gall.dcinside.com/mgallery/board/view/?id=github&no=63328&exception_mode=recommend&page=1
 https://gall.dcinside.com/mgallery/board/view/?id=github&no=63379&exception_mode=recommend&page=1
+https://gall.dcinside.com/mgallery/board/view/?id=github&no=63509&page=1
