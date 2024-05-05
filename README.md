@@ -80,7 +80,7 @@ erDiagram
     HousingComplex ||--o{ CommonExpenses : has
     HousingComplex ||--o{ LongTermRepairFund : has
 
-    IndividualUsage {
+    개별사용료 {
         string complexCode PK "단지코드"
         string date PK "날짜"
     }
