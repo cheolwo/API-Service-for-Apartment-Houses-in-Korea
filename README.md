@@ -45,34 +45,58 @@ Stay tuned for updates as we progress. We value your feedback to help shape the 
 
 ![image](https://github.com/cheolwo/CommonHouse/assets/25167316/94547669-dcb0-4932-a3d7-fd4afc3a9770)
 
-# Diagram
+# APIService Example
 ```mermaid
 classDiagram
-    class Customer {
-        +string name
-        +string address
-        +list~Account~ accounts
-        +addAccount(Account account)
-        +removeAccount(Account account)
+    class I공동주택개별관리비APIService {
+        <<interface>>
+        +Get급탕비(개별사용료정보제공Request request) Task<급탕비Response>
+    }
+    class 공동주택개별관리비APIService {
+        -HttpClient _httpClient
+        -string _serviceKey
+        +공동주택개별관리비APIService(HttpClient httpClient, IConfiguration configuration)
+        +Get급탕비(개별사용료정보제공Request request) Task<급탕비Response>
+    }
+    class HttpClient {
+    }
+    class IConfiguration {
+    }
+    class 개별사용료정보제공Request {
+    }
+    class 급탕비Response {
     }
 
-    class Account {
-        +string number
-        +double balance
-        +list~Transaction~ transactions
-        +deposit(double amount)
-        +withdraw(double amount)
-    }
+    공동주택개별관리비APIService --|> I공동주택개별관리비APIService : implements
+    공동주택개별관리비APIService --> HttpClient : uses
+    공동주택개별관리비APIService --> IConfiguration : uses
+    I공동주택개별관리비APIService --> 개별사용료정보제공Request : uses
+    I공동주택개별관리비APIService --> 급탕비Response : returns
 
-    class Transaction {
-        +date transactionDate
-        +double amount
-        +string description
-    }
-
-    Customer "1" -- "*" Account : has
-    Account "1" -- "*" Transaction : includes
 ```
+
+```mermaid
+sequenceDiagram
+    participant Client as Client
+    participant Service as 공동주택개별관리비APIService
+    participant API as 외부 API
+    participant Serializer as XmlSerializer
+
+    Client->>+Service: Get급탕비(request)
+    Service->>+API: HTTP GET request (url)
+    API-->>-Service: HTTP Response
+
+    alt 성공적인 응답
+        Service->>+Serializer: Deserialize XML
+        Serializer-->>-Service: 급탕비Response
+        Service-->>-Client: 급탕비Response
+    else 실패한 응답
+        Service->>Service: Read Error Content
+        Service-->>-Client: Throw HttpRequestException
+    end
+
+```
+
 # Configuration Settings
 
 Below you will find a basic example of the necessary `appsettings.json` configuration for this project. Please make sure to adjust the settings according to your local environment and security requirements.
