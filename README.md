@@ -7,7 +7,9 @@
 
 ![image](https://github.com/cheolwo/CommonHouse/assets/25167316/7f60bf14-a40e-4060-9a13-8c9a832c6bb1)
 
+<h2 align="center"><strong><span style="color:red;">공통적인 모듈 간 관계</span></strong></h2>
 
+![image](https://github.com/cheolwo/CommonHouse/assets/25167316/94547669-dcb0-4932-a3d7-fd4afc3a9770)
 
 <h2 align="center"><strong><span style="color:red;">Dcinside GitHub 갤러리</span></strong></h2>
 https://gall.dcinside.com/mgallery/board/view/?id=github&no=63328&exception_mode=recommend&page=1
