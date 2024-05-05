@@ -45,6 +45,47 @@ Stay tuned for updates as we progress. We value your feedback to help shape the 
 
 ![image](https://github.com/cheolwo/CommonHouse/assets/25167316/94547669-dcb0-4932-a3d7-fd4afc3a9770)
 
+# Diagram
+
+```Mermaid
+classDiagram
+    class I공동주택개별관리비APIService {
+        +Get급탕비(개별사용료정보제공Request request)
+        +Get난방비(개별사용료정보제공Request request)
+        +Get가스사용료(개별사용료정보제공Request request)
+        +Get전기료(개별사용료정보제공Request request)
+        +Get수도료(개별사용료정보제공Request request)
+        +Get정화조오물수수료(개별사용료정보제공Request request)
+        +Get생활폐기물수수료(개별사용료정보제공Request request)
+        +Get입주자대표회의운영비(개별사용료정보제공Request request)
+        +Get건물보험료(개별사용료정보제공Request request)
+        +Get선거관리위원회운영비(개별사용료정보제공Request request)
+    }
+
+    class 공동주택개별관리비APIService {
+        -HttpClient _httpClient
+        -string _serviceKey
+        +공동주택개별관리비APIService(HttpClient httpClient, IConfiguration configuration)
+        +Get급탕비(개별사용료정보제공Request request)
+        +Get난방비(개별사용료정보제공Request request)
+        +Get가스사용료(개별사용료정보제공Request request)
+        +Get전기료(개별사용료정보제공Request request)
+        +Get수도료(개별사용료정보제공Request request)
+        +Get정화조오물수수료(개별사용료정보제공Request request)
+        +Get생활폐기물수수료(개별사용료정보제공Request request)
+        +Get입주자대표회의운영비(개별사용료정보제공Request request)
+        +Get건물보험료(개별사용료정보제공Request request)
+        +Get선거관리위원회운영비(개별사용료정보제공Request request)
+    }
+
+    I공동주택개별관리비APIService <|.. 공동주택개별관리비APIService : implements
+    I공동주택개별관리비APIService "1" *-- "1" 개별사용료정보제공Request : uses
+
+    class 개별사용료정보제공Request {
+        +string kaptCode
+        +string searchDate
+    }
+```
 # Configuration Settings
 
 Below you will find a basic example of the necessary `appsettings.json` configuration for this project. Please make sure to adjust the settings according to your local environment and security requirements.
