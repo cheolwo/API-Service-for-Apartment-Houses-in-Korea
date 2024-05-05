@@ -47,10 +47,31 @@ Stay tuned for updates as we progress. We value your feedback to help shape the 
 
 # Diagram
 ```mermaid
-graph LR
-    A --> B
-    B --> C
-    C --> A
+classDiagram
+    class Customer {
+        +string name
+        +string address
+        +list~Account~ accounts
+        +addAccount(Account account)
+        +removeAccount(Account account)
+    }
+
+    class Account {
+        +string number
+        +double balance
+        +list~Transaction~ transactions
+        +deposit(double amount)
+        +withdraw(double amount)
+    }
+
+    class Transaction {
+        +date transactionDate
+        +double amount
+        +string description
+    }
+
+    Customer "1" -- "*" Account : has
+    Account "1" -- "*" Transaction : includes
 ```
 # Configuration Settings
 
