@@ -4,7 +4,25 @@ using 국토교통부_공공데이터Common.장기수선충당금_정보서비�
 using 국토교통부_공공데이터Common.장기수선충당금_정보서비스.ResponseModel.월사용액;
 using 국토교통부_공공데이터Common.장기수선충당금_정보서비스.ResponseModel.적립요율;
 using 국토교통부_공공데이터Common.장기수선충당금_정보서비스.ResponseModel.충당금잔액;
-
+/// <summary>
+/// Service for accessing long-term repair reserve fund data of apartment complexes.
+/// This service connects to the Ministry of Land, Infrastructure and Transport's API 
+/// to retrieve data on long-term maintenance funds required for apartment complexes, aiding in financial planning and maintenance scheduling.
+/// </summary>
+/// <remarks>
+/// API details:
+/// - Category: Regional Development - Urban and Regional
+/// - Managed by: Housing Construction Supply Division
+/// - Contact number: 044-201-3380
+/// - API Type: REST
+/// - Data Format: XML
+/// - Usage Fee: Free; additional traffic can be requested upon registration of usage cases.
+///   - Development account: 10,000 calls/day.
+///   - Operational accounts: Extendable based on usage case submission.
+/// - Approval Type: Automatic for both development and operational phases.
+/// - Usage Permissions: No restrictions on use.
+/// - Reference Document: [장기수선충당금 정보 활용가이드 v1.3](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15059160)
+/// </remarks>
 namespace 국토교통부_공공데이터Common.장기수선충당금_정보서비스
 {
     public class 공동주택장기수선충당금APIService

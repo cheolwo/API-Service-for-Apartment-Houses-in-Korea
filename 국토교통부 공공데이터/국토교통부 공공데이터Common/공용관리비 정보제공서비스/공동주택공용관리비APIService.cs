@@ -20,15 +20,29 @@ using 국토교통부_공공데이터Common.공용관리비_정보제공서비�
 using 국토교통부_공공데이터Common.공용관리비_정보제공서비스.ResponseModel.피복비;
 using 국토교통부_공공데이터Common.공용관리비_정보제공서비스.ResponseModel.인건비;
 
+/// <summary>
+/// Initializes a new instance of the service for accessing apartment common management cost data.
+/// This service interacts with the Ministry of Land, Infrastructure and Transport's API to fetch various management costs associated with apartment complexes.
+/// </summary>
+/// <remarks>
+/// This API provides access to:
+/// - Category: Regional Development - Urban and Regional
+/// - Managed by: Housing Construction Supply Division
+/// - Contact: 044-201-3380
+/// - API Type: REST
+/// - Data Format: XML
+/// - Usage Fee: Free, with additional traffic allowances available upon application.
+/// - Traffic Limits: 10,000 calls per day for development accounts; operational accounts can request more based on usage cases.
+/// - Approval Type: Automatic approval for both development and operational stages.
+/// - Usage Permissions: No restrictions on the use range.
+/// - Link: https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15057937
+/// </remarks>
 namespace 국토교통부_공공데이터Common.공용관리비정보제공서비스
 {
     public interface I공동주택공용관리비APIService
     {
         Task<난방비Response> Get공용관리비(공용관리비Request request);
     }
-    /// <summary>
-    /// http://apis.data.go.kr/1611000/AptIndvdlzManageCostService
-    /// </summary>
     public class 공동주택공용관리비APIService 
     {
         private HttpClient _httpClient;

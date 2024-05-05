@@ -13,15 +13,29 @@ using 국토교통부_공공데이터Common.개발사용료_정보제공_서비�
 using 국토교통부_공공데이터Common.개발사용료_정보제공_서비스.ResponseModel.전기료;
 using 국토교통부_공공데이터Common.개발사용료_정보제공_서비스.ResponseModel.정화조오물수수료;
 
+/// <summary>
+/// Initializes a new instance of the service for accessing individual apartment management cost data.
+/// This service communicates with the Ministry of Land, Infrastructure and Transport's API to fetch detailed management costs for individual apartments.
+/// </summary>
+/// <remarks>
+/// This API provides access to:
+/// - Category: Regional Development - Urban and Regional
+/// - Managed by: Housing Construction Supply Division
+/// - Contact: 044-201-3380
+/// - API Type: REST
+/// - Data Format: XML
+/// - Usage Fee: Free, with traffic allowances available upon application.
+///   Development account: 10,000 calls per day; Operational accounts can apply for increased traffic based on usage cases.
+/// - Approval Type: Automatic approval for both development and operational stages.
+/// - Usage Permissions: No restrictions on usage scope.
+/// - Documentation: [공동주택관리비(개별사용료)정보 활용가이드 v1.1](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15059469)
+/// </remarks>
 namespace 국토교통부_공공데이터Common.개발사용료정보제공서비스
 {
     public interface I공동주택개별관리비APIService
     {
         Task<급탕비Response> Get급탕비(개별사용료정보제공Request request);
     }
-    /// <summary>
-    /// http://apis.data.go.kr/1611000/AptCmnuseManageCostService
-    /// </summary>
     public class 공동주택개별관리비APIService : I공동주택개별관리비APIService
     {
         private readonly HttpClient _httpClient;

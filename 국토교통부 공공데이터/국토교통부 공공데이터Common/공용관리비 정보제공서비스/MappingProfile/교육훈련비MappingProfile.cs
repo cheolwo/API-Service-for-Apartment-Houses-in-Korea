@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using 국토교통부_공공데이터Common.Model;
 using 국토교통부_공공데이터Common.공용관리비_정보제공서비스.ResponseModel.교육훈련비;
-namespace 국토교통부_공공데이터Common.공용관리비_정보제공서비스.MappingProfile
+namespace 국토교통부_공공데이터Common.MappingProfile
 {
     public class 교육훈련비MappingProfile : Profile
     {
@@ -15,5 +15,4 @@ namespace 국토교통부_공공데이터Common.공용관리비_정보제공서�
                 });
         }
     }
-
 }

@@ -2,7 +2,7 @@
 using 국토교통부_공공데이터Common.Model;
 using 국토교통부_공공데이터Common.장기수선충당금_정보서비스.ResponseModel.월사용액;
 
-namespace 국토교통부_공공데이터Common.장기수선충당금_정보서비스.MappingProfile
+namespace 국토교통부_공공데이터Common.MappingProfile
 {
     public class 단지별월사용액MappingProfile : Profile
     {

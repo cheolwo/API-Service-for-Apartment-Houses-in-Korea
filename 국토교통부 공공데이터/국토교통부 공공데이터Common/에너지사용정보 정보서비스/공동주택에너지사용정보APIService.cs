@@ -8,6 +8,25 @@ using 국토교통부_공공데이터Common.에너지사용정보_정보서비�
 using 국토교통부_공공데이터Common.에너지사용정보_정보서비스.ResponseModel.시도평균에너지사용금액;
 using 국토교통부_공공데이터Common.에너지사용정보_정보서비스.ResponseModel.전국평균에너지사용금액;
 
+/// <summary>
+/// Service for accessing energy usage information of apartment complexes.
+/// Interacts with the Ministry of Land, Infrastructure and Transport's API 
+/// to fetch energy consumption data specific to apartment complexes, enhancing energy management and reporting capabilities.
+/// </summary>
+/// <remarks>
+/// API details:
+/// - Category: Regional Development - Urban and Regional
+/// - Managed by: Housing Construction Supply Division
+/// - Contact number: 044-201-3380
+/// - API Type: REST
+/// - Data Format: XML
+/// - Usage Fee: Free; traffic limits are extendable on application.
+///   - Development account: 10,000 calls/day.
+///   - Operational accounts: Traffic increase available upon case registration.
+/// - Approval Type: Automatic for both development and operational phases.
+/// - Usage Permissions: Unrestricted.
+/// - Reference Document: [공동주택에너지사용정보 활용가이드 v1.1](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15012964)
+/// </remarks>
 namespace 국토교통부_공공데이터Common.에너지사용정보_정보서비스
 {
     public class 공동주택에너지사용정보APIService
