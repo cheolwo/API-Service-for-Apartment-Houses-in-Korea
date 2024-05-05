@@ -63,6 +63,8 @@ erDiagram
 ```
 # Configuration Settings
 
+https://github.com/cheolwo/Residential-Collection-Server
+
 Below you will find a basic example of the necessary `appsettings.json` configuration for this project. Please make sure to adjust the settings according to your local environment and security requirements.
 
 ## Basic Configuration
