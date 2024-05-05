@@ -1,6 +1,6 @@
 <h2 align="center"><strong><span style="color:red;">프로세스</span></strong></h2>
 
-![image](https://github.com/cheolwo/CommonHouse/assets/25167316/6d317845-2290-41d7-9cd2-1c700707e00e)
+![image](https://github.com/cheolwo/CommonHouse/assets/25167316/ce39177d-5f92-4dc1-a0be-4c0ffbb9ea09)
 
 
 <h2 align="center"><strong><span style="color:red;">Dcinside 커뮤니티</span></strong></h2>
