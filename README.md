@@ -73,9 +73,6 @@ classDiagram
     I공동주택개별관리비APIService --> 개별사용료정보제공Request : uses
     I공동주택개별관리비APIService --> 급탕비Response : returns
 
-```
-
-```mermaid
 sequenceDiagram
     participant Client as Client
     participant Service as 공동주택개별관리비APIService
@@ -83,23 +80,18 @@ sequenceDiagram
     participant Serializer as XmlSerializer
 
     Client->>+Service: Get급탕비(request)
-    activate Service
     Service->>+API: HTTP GET request (url)
-    activate API
     API-->>-Service: HTTP Response
-    deactivate API
 
     alt 성공적인 응답
         Service->>+Serializer: Deserialize XML
-        activate Serializer
         Serializer-->>-Service: 급탕비Response
-        deactivate Serializer
         Service-->>-Client: 급탕비Response
     else 실패한 응답
         Service->>Service: Read Error Content
         Service-->>-Client: Throw HttpRequestException
     end
-    deactivate Service
+
 ```
 
 # Configuration Settings
