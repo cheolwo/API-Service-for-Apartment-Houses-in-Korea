@@ -75,28 +75,28 @@ classDiagram
 ```
 ```mermaid
 erDiagram
-    HousingComplex ||--o{ "개별사용료" : has
-    HousingComplex ||--o{ EnergyUsageInfo : has
-    HousingComplex ||--o{ CommonExpenses : has
-    HousingComplex ||--o{ LongTermRepairFund : has
+    "공동주택" ||--o{ "개별사용료" : has
+    "공동주택" ||--o{ "에너지사용정보" : has
+    "공동주택" ||--o{ "공용관리비" : has
+    "공동주택" ||--o{ "장기수선충당금" : has
 
     "개별사용료" {
         string complexCode PK "단지코드"
         string date PK "날짜"
     }
-    EnergyUsageInfo {
+    "에너지사용정보" {
         string complexCode PK "단지코드"
         string date PK "날짜"
     }
-    CommonExpenses {
+    "공용관리비" {
         string complexCode PK "단지코드"
         string date PK "날짜"
     }
-    LongTermRepairFund {
+    "장기수선충당금" {
         string complexCode PK "단지코드"
         string date PK "날짜"
     }
-    HousingComplex {
+    "공동주택" {
         string complexCode PK "단지코드"
     }
 
