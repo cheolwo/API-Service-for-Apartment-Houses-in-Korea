@@ -32,7 +32,7 @@ Stay tuned for updates as we progress. We value your feedback to help shape the 
 - [데이터 API 6 국토교통부_공동주택관리비(장기수선충당금)정보서비스](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15059160)
 
 
-<h2 align="center"><strong><span style="color:red;">프로세스</span></strong></h2>
+<h2 align="center"><strong><span style="color:red;">공동주택정보수집Controller의 DFD</span></strong></h2>
 
 ```mermaid
 sequenceDiagram
@@ -58,6 +58,9 @@ sequenceDiagram
     Note over Client,Handler: Exception Handling by Controller
 
 ```
+
+<h2 align="center"><strong><span style="color:red;">비용정보수집Controller의 DFD</span></strong></h2>
+
 ```mermaid
 sequenceDiagram
     participant Client as Client
