@@ -3,12 +3,12 @@
 ![image](https://github.com/cheolwo/CommonHouse/assets/25167316/a7fd4c9e-3a2f-4c1b-84d1-fa53b35179af)
 
 
-- [데이터 API 1 상세보기](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15058453)
-- [데이터 API 2 상세보기](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15059160)
-- [데이터 API 3 상세보기](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15057937)
-- [데이터 API 4 상세보기](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15012964)
-- [데이터 API 5 상세보기](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15059469)
-- [데이터 API 6 상세보기](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15057332)
+- [데이터 API 1 국토교통부_공동주택 단지 목록제공 서비스](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15057332)
+- [데이터 API 2 국토교통부_공동주택 기본 정보제공 서비스](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15058453)
+- [데이터 API 3 국토교통부_공동주택 에너지 사용 정보](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15012964)
+- [데이터 API 4 국토교통부_공동주택관리비(개별사용료)정보제공서비스](https://www.data.go.kr/data/15059469/openapi.do)
+- [데이터 API 5 국토교통부_공동주택관리비(공용관리비)정보제공서비스](https://www.data.go.kr/data/15057937/openapi.do)
+- [데이터 API 6 국토교통부_공동주택관리비(장기수선충당금)정보서비스](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15059160)
 
 
 <h2 align="center"><strong><span style="color:red;">프로세스</span></strong></h2>
