@@ -81,23 +81,23 @@ erDiagram
     "공동주택" ||--o{ "장기수선충당금" : has
 
     "개별사용료" {
-        string "단지코드" PK "단지코드"
+        string "단지코드" PK "a"
         string date PK "date"
     }
     "에너지사용정보" {
-        string "단지코드" PK "단지코드"
+        string "단지코드" PK "b"
         string date PK "date"
     }
     "공용관리비" {
-        string "단지코드" PK "단지코드"
+        string "단지코드" PK "c"
         string date PK "date"
     }
     "장기수선충당금" {
-        string "단지코드" PK "단지코드"
+        string "단지코드" PK "d"
         string date PK "date"
     }
     "공동주택" {
-        string "단지코드" PK "단지코드"
+        string "단지코드" PK "e"
     }
 ```
 
