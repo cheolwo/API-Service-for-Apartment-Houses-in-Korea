@@ -47,7 +47,6 @@ Stay tuned for updates as we progress. We value your feedback to help shape the 
 
 # Diagram
 
-```Mermaid
 classDiagram
     class I공동주택개별관리비APIService {
         +Get급탕비(개별사용료정보제공Request request)
@@ -85,8 +84,7 @@ classDiagram
         +string kaptCode
         +string searchDate
     }
-```
-```Mermaid
+
 sequenceDiagram
     participant Client as Client
     participant Service as 공동주택개별관리비APIService
@@ -106,7 +104,6 @@ sequenceDiagram
         Service->>Service: Read Error Content
         Service-->>-Client: Throw HttpRequestException
     end
-```
 
 # Configuration Settings
 
