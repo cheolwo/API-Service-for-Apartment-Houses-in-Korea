@@ -67,9 +67,7 @@ erDiagram
     }
 ```
 
-<h2 align="center"><strong><span style="color:red;">공통적인 모듈 간 관계</span></strong></h2>
-
-# APIService Example
+<h2 align="center"><strong><span style="color:red;">APIService Example</span></strong></h2>
 
 ```mermaid
 classDiagram
