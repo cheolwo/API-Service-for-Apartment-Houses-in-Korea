@@ -47,64 +47,6 @@ Stay tuned for updates as we progress. We value your feedback to help shape the 
 
 # Diagram
 
-classDiagram
-    class I공동주택개별관리비APIService {
-        +Get급탕비(개별사용료정보제공Request request)
-        +Get난방비(개별사용료정보제공Request request)
-        +Get가스사용료(개별사용료정보제공Request request)
-        +Get전기료(개별사용료정보제공Request request)
-        +Get수도료(개별사용료정보제공Request request)
-        +Get정화조오물수수료(개별사용료정보제공Request request)
-        +Get생활폐기물수수료(개별사용료정보제공Request request)
-        +Get입주자대표회의운영비(개별사용료정보제공Request request)
-        +Get건물보험료(개별사용료정보제공Request request)
-        +Get선거관리위원회운영비(개별사용료정보제공Request request)
-    }
-
-    class 공동주택개별관리비APIService {
-        -HttpClient _httpClient
-        -string _serviceKey
-        +공동주택개별관리비APIService(HttpClient httpClient, IConfiguration configuration)
-        +Get급탕비(개별사용료정보제공Request request)
-        +Get난방비(개별사용료정보제공Request request)
-        +Get가스사용료(개별사용료정보제공Request request)
-        +Get전기료(개별사용료정보제공Request request)
-        +Get수도료(개별사용료정보제공Request request)
-        +Get정화조오물수수료(개별사용료정보제공Request request)
-        +Get생활폐기물수수료(개별사용료정보제공Request request)
-        +Get입주자대표회의운영비(개별사용료정보제공Request request)
-        +Get건물보험료(개별사용료정보제공Request request)
-        +Get선거관리위원회운영비(개별사용료정보제공Request request)
-    }
-
-    I공동주택개별관리비APIService <|.. 공동주택개별관리비APIService : implements
-    I공동주택개별관리비APIService "1" *-- "1" 개별사용료정보제공Request : uses
-
-    class 개별사용료정보제공Request {
-        +string kaptCode
-        +string searchDate
-    }
-
-sequenceDiagram
-    participant Client as Client
-    participant Service as 공동주택개별관리비APIService
-    participant API as 외부 API (국토교통부)
-    participant Serializer as XmlSerializer
-
-    Client->>+Service: Get급탕비(request)
-    Service->>+API: HTTP GET request (URL, ServiceKey, kaptCode, searchDate)
-    API-->>-Service: HTTP Response
-
-    alt 성공적인 응답
-        Service->>Service: Check Status Code (200 OK)
-        Service->>+Serializer: Deserialize XML to 급탕비Response
-        Serializer-->>-Service: 급탕비Response 객체
-        Service-->>-Client: 급탕비Response 객체
-    else 실패한 응답
-        Service->>Service: Read Error Content
-        Service-->>-Client: Throw HttpRequestException
-    end
-
 # Configuration Settings
 
 Below you will find a basic example of the necessary `appsettings.json` configuration for this project. Please make sure to adjust the settings according to your local environment and security requirements.
