@@ -73,6 +73,33 @@ classDiagram
     I공동주택개별관리비APIService --> 개별사용료정보제공Request : uses
     I공동주택개별관리비APIService --> 급탕비Response : returns
 ```
+```mermaid
+erDiagram
+    공동주택 ||--o{ 개별사용료 : "has"
+    공동주택 ||--o{ 에너지사용정보 : "has"
+    공동주택 ||--o{ 공용관리비 : "has"
+    공동주택 ||--o{ 장기수선충당금 : "has"
+
+    개별사용료 {
+        string 단지코드 PK
+        string date PK
+    }
+    에너지사용정보 {
+        string 단지코드 PK
+        string date PK
+    }
+    공용관리비 {
+        string 단지코드 PK
+        string date PK
+    }
+    장기수선충당금 {
+        string 단지코드 PK
+        string date PK
+    }
+    공동주택 {
+        string 단지코드 PK
+    }
+```
 
 # Configuration Settings
 
