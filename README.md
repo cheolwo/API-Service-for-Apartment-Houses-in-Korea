@@ -75,12 +75,12 @@ classDiagram
 ```
 ```mermaid
 erDiagram
-    HousingComplex ||--o{ IndividualUsage : has
+    HousingComplex ||--o{ "개별사용료" : has
     HousingComplex ||--o{ EnergyUsageInfo : has
     HousingComplex ||--o{ CommonExpenses : has
     HousingComplex ||--o{ LongTermRepairFund : has
 
-    개별사용료 {
+    "개별사용료" {
         string complexCode PK "단지코드"
         string date PK "날짜"
     }
