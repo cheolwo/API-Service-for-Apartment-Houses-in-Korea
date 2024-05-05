@@ -99,6 +99,6 @@ builder.Services.AddTransient<공동주택공용관리비APIService>();
 builder.Services.AddTransient<공동주택에너지사용정보APIService>();
 builder.Services.AddTransient<공동주택장기수선충당금APIService>();
 ```
-<h2 align="center"><strong><span style="color:red;">Dcinside GitHub 갤러리</span></strong></h2>
+<h2 align="center"><strong><span style="color:red;">Dcinside GitHub 갤러리 연재글</span></strong></h2>
 https://gall.dcinside.com/mgallery/board/view/?id=github&no=63328&exception_mode=recommend&page=1
 https://gall.dcinside.com/mgallery/board/view/?id=github&no=63379&exception_mode=recommend&page=1
