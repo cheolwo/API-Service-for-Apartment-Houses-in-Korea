@@ -97,6 +97,40 @@ classDiagram
     I공동주택개별관리비APIService --> 급탕비Response : returns
 ```
 
+```mermaid
+classDiagram
+    공동주택단지목록정보수집Handler ..|> IRequestHandler : implements
+    공동주택단지목록정보수집Handler : +IMapper _mapper
+    공동주택단지목록정보수집Handler : +공동주택DbContext _context
+    공동주택단지목록정보수집Handler : +공동주택단지목록APIService _APIService
+    공동주택단지목록정보수집Handler : +Handle(공동주택단지Request request, CancellationToken cancellationToken) Task<Unit>
+    
+    공동주택단지목록정보수집Handler --> "1" IMapper : uses
+    공동주택단지목록정보수집Handler --> "1" 공동주택DbContext : uses
+    공동주택단지목록정보수집Handler --> "1" 공동주택단지목록APIService : uses
+
+    class 공동주택 {
+        string 단지코드
+        string 단지명
+    }
+
+    class IMapper {
+        <<interface>>
+        +Map()
+    }
+
+    class 공동주택DbContext {
+        +Set()
+        +SaveChangesAsync()
+    }
+
+    class 공동주택단지목록APIService {
+        +GetTotalAptListAsync() List
+    }
+
+    class 공동주택단지Request {
+    }
+```
 
 # Configuration Settings
 
