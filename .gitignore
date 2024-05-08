@@ -7,6 +7,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+# Ignore app settings to prevent sensitive data exposure
+appsettings.json
+
 # User-specific files
 *.rsuser
 *.suo
@@ -398,5 +401,8 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Ignore appsettings.json to prevent sensitive data exposure
+appsettings.json
 
 # End of https://www.toptal.com/developers/gitignore/api/csharp
