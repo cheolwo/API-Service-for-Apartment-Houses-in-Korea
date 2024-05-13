@@ -61,6 +61,31 @@ erDiagram
         string complexCode PK "단지코드"
     }
 ```
+```mermaid
+flowchart TD
+    start([Start]) --> input{{"Input n (nodes), m (edges)"}}
+    input --> initGraph[("Initialize Graph and Indegree Array")]
+    initGraph --> readEdges{{"For each edge"}}
+    readEdges --> inputEdge["Input edge (u, v)"]
+    inputEdge --> updateGraph[("Update graph[u][v] and indegree[v]")]
+    updateGraph --> readEdges
+    readEdges --> enqueueZeroIndegree[("Enqueue nodes with zero indegree")]
+
+    enqueueZeroIndegree --> dequeueLoop{{"While queue not empty"}}
+    dequeueLoop --> extractNode[("Dequeue node")]
+    extractNode --> processNode[("Process each adjacent node j")]
+    processNode --> decreaseIndegree[("Decrease indegree[j]")]
+    decreaseIndegree --> checkIndegreeZero{{"Indegree[j] == 0?"}}
+    checkIndegreeZero -->|Yes| enqueueJ[("Enqueue node j")]
+    checkIndegreeZero -->|No| processNode
+    enqueueJ --> processNode
+
+    dequeueLoop --> checkCompletion{{"All nodes processed?"}}
+    checkCompletion -->|Yes| printOrder[("Print order")]
+    checkCompletion -->|No| cycleDetected[("Cycle detected")]
+    printOrder --> end([End])
+    cycleDetected --> end
+```
 # Configuration Settings
 
 https://github.com/cheolwo/Residential-Collection-Server
